@@ -1,0 +1,648 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="DeviceManager">
+      <UniqueIdentifier>{07a685e0-aee5-4037-a37d-5861ed3717ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="JsonCpp">
+      <UniqueIdentifier>{83bbc1aa-1565-4f2b-9db9-3a91ff967901}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Paramers">
+      <UniqueIdentifier>{12d5fca6-7627-4e27-87c7-4144711cec3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Remote">
+      <UniqueIdentifier>{8d3aa202-61b6-4ab0-8926-00124060d6fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include">
+      <UniqueIdentifier>{67204238-9c9d-4cf0-a4f1-d4585298ff89}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DeviceManager\connection.h">
+      <Filter>DeviceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceManager\download_record.h">
+      <Filter>DeviceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceManager\forward_define.h">
+      <Filter>DeviceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceManager\local_playback.h">
+      <Filter>DeviceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceManager\preview.h">
+      <Filter>DeviceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceManager\ptz_control.h">
+      <Filter>DeviceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceManager\remote_playback.h">
+      <Filter>DeviceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceManager\RSDevice.h">
+      <Filter>DeviceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceManager\search_modify.h">
+      <Filter>DeviceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceManager\search_record.h">
+      <Filter>DeviceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceManager\sync_remote_playback.h">
+      <Filter>DeviceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonCpp\json-forwards.h">
+      <Filter>JsonCpp</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonCpp\json.h">
+      <Filter>JsonCpp</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonCpp\win-inttypes.h">
+      <Filter>JsonCpp</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonCpp\win-stdint.h">
+      <Filter>JsonCpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\AlarmAbnormity.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\Alarmblock.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\AlarmIO.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\AlarmMotion.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\AlarmNewIO.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\AlarmPIR.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\AlarmPlan.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\AlarmPtz.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\ALTEReport.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\AnalogCh.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\AutoUpgrade.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\CaptureJh.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\CaptureSet.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\ChLive.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\ChnInfo.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\Defaultparam.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\Devlog.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\DropboxParam.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\EmailPlan.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\EncodeStream.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\EPlatform.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\FaceDetection.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\FishEye.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\FloodLight.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\FTP.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\GB28181.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\GoodsLostLegacy.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\HttpSet.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\HumanDetection.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\IEEEX.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\ImgCtrl.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\IntelligentNewUser.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\IntelligentPlan.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\IntrusionDetection.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\IOAlarmManage.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\IPCSet.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\IPFilter.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\IPFilterList.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\JsonPage.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\LensShade.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\LiveParam.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\NetBase.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\NetDNS.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\NetEmail.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\NetFilter.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\NewNetEmail.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\NormalCloSto.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\NormalCloStoEm.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\ParamBase.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\PeopleCrossCounting.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\PerimeterLine.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\PerimeterZone.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\PlatformSet.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\ProManage.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\RecConfig.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\RecInfo.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\RecPlan.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\RecPlanIPC.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\RecPlanSmart.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\RedMantleDetection.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\RSPush.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\RSPushSubscription.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\RTSP.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\SendCertificate.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\ShowIntell.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\SNMP.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\SoundAlarm.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\SSL.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\StdAfx.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\SwannCloSto.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\SwannWifi.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\SwitchSet.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\SXHTTPS.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\SysInfBase.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\SysInfHdd.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\SysMaintain.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\SysParamDst.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\SysParamPTZ.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\SysParamSerial.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\SysParamUSer.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\SystemID.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\TypeMeterRecognition.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\UserAF.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\VideoCover.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\VideoOutput.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\VideoRoi.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\VideoSet.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\Voicectrl.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\XinQiaoFD.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Paramers\ZeroChannel.h">
+      <Filter>Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Remote\ParamRemoteTest.h">
+      <Filter>Remote</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\common_type.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\correction_type.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\RSNet.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\RSNetParameter.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\RSNetProtocol.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\RSPlay.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\RSSDKWrapper.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\RSTypedef.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DeviceManager\RSDevice.cpp">
+      <Filter>DeviceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="JsonCpp\jsoncpp.cpp">
+      <Filter>JsonCpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\AlarmAbnormity.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\Alarmblock.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\AlarmIO.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\AlarmMotion.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\AlarmNewIO.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\AlarmPIR.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\AlarmPlan.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\AlarmPtz.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\ALTEReport.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\AnalogCh.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\AutoUpgrade.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\CaptureJh.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\CaptureSet.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\ChLive.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\ChnInfo.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\Defaultparam.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\Devlog.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\DropboxParam.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\EmailPlan.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\EncodeStream.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\EPlatform.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\FaceDetection.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\FishEye.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\FloodLight.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\FTP.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\GB28181.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\GoodsLostLegacy.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\HttpSet.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\HumanDetection.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\IEEEX.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\ImgCtrl.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\IntelligentNewUser.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\IntelligentPlan.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\IntrusionDetection.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\IOAlarmManage.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\IPCSet.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\IPFilter.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\IPFilterList.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\JsonPage.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\LensShade.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\LiveParam.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\NetBase.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\NetDNS.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\NetEmail.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\NetFilter.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\NewNetEmail.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\NormalCloSto.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\NormalCloStoEm.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\ParamBase.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\PeopleCrossCounting.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\PerimeterLine.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\PerimeterZone.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\PlatformSet.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\ProManage.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\RecConfig.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\RecInfo.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\RecPlan.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\RecPlanIPC.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\RecPlanSmart.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\RedMantleDetection.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\RSPush.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\RSPushSubscription.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\RTSP.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\SendCertificate.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\ShowIntell.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\SNMP.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\SoundAlarm.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\SSL.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\SwannCloSto.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\SwannWifi.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\SwitchSet.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\SXHTTPS.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\SysInfBase.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\SysInfHdd.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\SysMaintain.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\SysParamDst.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\SysParamPTZ.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\SysParamSerial.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\SysParamUSer.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\SystemID.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\TypeMeterRecognition.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\UserAF.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\VideoCover.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\VideoOutput.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\VideoRoi.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\VideoSet.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\Voicectrl.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\XinQiaoFD.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Paramers\ZeroChannel.cpp">
+      <Filter>Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Remote\ParamRemoteTest.cpp">
+      <Filter>Remote</Filter>
+    </ClCompile>
+    <ClCompile Include="Include\RSSDKWrapper.cpp">
+      <Filter>Include</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

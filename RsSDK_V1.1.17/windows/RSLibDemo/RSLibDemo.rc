@@ -1,0 +1,501 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#ifndef APSTUDIO_INVOKED
+#include "targetver.h"
+#endif
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (Simplified, PRC) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#ifndef APSTUDIO_INVOKED\r\n"
+    "#include ""targetver.h""\r\n"
+    "#endif\r\n"
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""res\\RSLibDemo.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""     // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\RSLibDemo.ico"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DLG_PREVIEW DIALOGEX 0, 0, 466, 314
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "LU",IDC_BTN_LU,383,16,20,14
+    PUSHBUTTON      "U",IDC_BTN_U,407,16,20,14
+    PUSHBUTTON      "RU",IDC_BTN_RU,430,16,20,14
+    PUSHBUTTON      "L",IDC_BTN_L,383,34,20,14
+    PUSHBUTTON      "A",IDC_BTN_A,407,34,20,14
+    PUSHBUTTON      "R",IDC_BTN_R,430,34,20,14
+    PUSHBUTTON      "LD",IDC_BTN_LD,383,52,20,14
+    PUSHBUTTON      "D",IDC_BTN_D,407,52,20,14
+    PUSHBUTTON      "RD",IDC_BTN_RD,430,52,20,14
+    PUSHBUTTON      "Zoom-",IDC_BTN_ZOOM_D,382,71,32,14
+    PUSHBUTTON      "Zoom+",IDC_BTN_ZOOM_I,417,71,32,14
+    PUSHBUTTON      "Focus-",IDC_BTN_FOCUS_D,382,88,32,14
+    PUSHBUTTON      "Focus+",IDC_BTN_FOCUS_I,417,88,32,14
+    PUSHBUTTON      "IRIS-",IDC_BTN_IRIS_D,382,105,32,14
+    PUSHBUTTON      "IRIS+",IDC_BTN_IRIS_I,417,105,32,14
+    GROUPBOX        "PTZ",IDC_STATIC_PTZ,374,3,88,121
+    GROUPBOX        "FishEye",IDC_STATIC_FISHEYE,374,123,88,25
+    COMBOBOX        IDC_COMBO_FISHEYE,377,132,82,69,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_LIST_ALARM,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,226,452,81
+    LTEXT           "",IDC_STA_PREVIEW_WND,7,7,362,214
+    PUSHBUTTON      "Capture",IDC_BTN_CAPTURE,377,150,50,12
+    PUSHBUTTON      "Start Record",IDC_BTN_START_REC,377,166,50,12
+    PUSHBUTTON      "Stop Record",IDC_BTN_STOP_REC,377,182,50,12
+    PUSHBUTTON      "...",IDC_BTN_OPEN,427,182,32,12
+    COMBOBOX        IDC_COMBO_RECORD_TYPE,427,166,32,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_CAPTURE_TYPE,427,150,32,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Capture from device",IDC_BTN_CAPTURE_FROM_DEVICE,377,197,82,12
+    PUSHBUTTON      "Capture to buf",IDC_BTN_CAPTURE_TO_BUF,377,210,81,12
+END
+
+IDD_DLG_PLAYBACK DIALOGEX 0, 0, 466, 314
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "Month Search",IDC_STATIC_MONTH_SEARCH,7,7,150,173
+    GROUPBOX        "Playback",IDC_STATIC_PLAYBACK_CONTROL,163,7,296,172
+    GROUPBOX        "Day Search",IDC_STATIC_DAY_SEARCH,7,181,452,126
+    CONTROL         "",IDC_LIST_DOWNLOAD,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,14,190,438,97
+    PUSHBUTTON      "Search",IDC_BTN_SEARCH_DAY,78,293,60,14
+    PUSHBUTTON      "Start Download",IDC_BTN_START_DOWNLOAD,169,293,60,14
+    PUSHBUTTON      "Stop Download",IDC_BTN_STOP_DOWNLOAD,259,293,60,14
+    LTEXT           "",IDC_STATIC_PLAYBACK_WND,172,19,231,155
+    PUSHBUTTON      "Start",IDC_BTN_START,409,15,50,14
+    PUSHBUTTON      "Stop",IDC_BTN_STOP,409,31,50,14
+    PUSHBUTTON      "Pause",IDC_BTN_PAUSE,409,47,50,14
+    PUSHBUTTON      "Capture",IDC_BTN_CAPTURE,409,62,50,14
+    PUSHBUTTON      "Start Record",IDC_BTN_START_REC,409,78,50,14
+    PUSHBUTTON      "Stop Record",IDC_BTN_STOP_REC,409,94,50,14
+    PUSHBUTTON      "<",IDC_BTN_SLOW,409,110,22,14
+    PUSHBUTTON      ">",IDC_BTN_FAST,437,110,22,14
+    CONTROL         "",IDC_TIME_PICKER,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP | 0x8,409,138,50,15
+    PUSHBUTTON      "Seek",IDC_BTN_SEEK,409,155,50,14
+    CTEXT           "normal",IDC_STATIC_INFO,410,126,49,8
+    CONTROL         "",IDC_MONTH_PICKER,"SysDateTimePick32",DTS_RIGHTALIGN | WS_TABSTOP,19,24,68,15
+    PUSHBUTTON      "Search",IDC_BTN_SEARCH_MONTH,96,24,50,14
+    CONTROL         "01",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,52,20,10
+    CONTROL         "02",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,37,52,20,10
+    CONTROL         "03",IDC_CHECK3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,60,52,20,10
+    CONTROL         "04",IDC_CHECK4,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,83,52,20,10
+    CONTROL         "05",IDC_CHECK5,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,106,52,20,10
+    CONTROL         "06",IDC_CHECK6,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,129,52,20,10
+    CONTROL         "07",IDC_CHECK7,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,69,20,10
+    CONTROL         "08",IDC_CHECK8,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,37,69,20,10
+    CONTROL         "09",IDC_CHECK9,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,60,69,20,10
+    CONTROL         "10",IDC_CHECK10,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,83,69,20,10
+    CONTROL         "11",IDC_CHECK11,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,106,69,20,10
+    CONTROL         "12",IDC_CHECK12,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,129,69,20,10
+    CONTROL         "13",IDC_CHECK13,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,86,20,10
+    CONTROL         "14",IDC_CHECK14,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,37,86,20,10
+    CONTROL         "15",IDC_CHECK15,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,60,86,20,10
+    CONTROL         "16",IDC_CHECK16,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,83,86,20,10
+    CONTROL         "17",IDC_CHECK17,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,106,86,20,10
+    CONTROL         "18",IDC_CHECK18,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,129,86,20,10
+    CONTROL         "19",IDC_CHECK19,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,103,20,10
+    CONTROL         "20",IDC_CHECK20,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,37,103,20,10
+    CONTROL         "21",IDC_CHECK21,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,60,103,20,10
+    CONTROL         "22",IDC_CHECK22,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,83,103,20,10
+    CONTROL         "23",IDC_CHECK23,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,106,103,20,10
+    CONTROL         "24",IDC_CHECK24,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,129,103,20,10
+    CONTROL         "25",IDC_CHECK25,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,120,20,10
+    CONTROL         "26",IDC_CHECK26,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,37,120,20,10
+    CONTROL         "27",IDC_CHECK27,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,60,120,20,10
+    CONTROL         "28",IDC_CHECK28,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,83,120,20,10
+    CONTROL         "29",IDC_CHECK29,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,106,120,20,10
+    CONTROL         "30",IDC_CHECK30,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,129,120,20,10
+    CONTROL         "31",IDC_CHECK31,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,135,20,10
+    LTEXT           "Record Type",IDC_STATIC,19,158,68,10
+    COMBOBOX        IDC_COMBO_RECORD_TYPE,96,156,50,40,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_DLG_CONFIG DIALOGEX 0, 0, 466, 314
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "",IDC_GROUP_LEFT,7,7,77,300
+    PUSHBUTTON      "Live Channel",IDC_BTN_LIVE_CHANNEL,15,15,60,14
+    GROUPBOX        "",IDC_GROUP_RIGHT,90,7,369,300
+    PUSHBUTTON      "Upgrade",IDC_BTNUPGRADE,15,34,60,14
+    PUSHBUTTON      "User",IDC_BTN_USER,15,52,60,14
+    PUSHBUTTON      "HDD",IDC_BTN_HDD,15,72,60,15
+    PUSHBUTTON      "Json",IDC_BTN_JSON,15,93,60,15
+    PUSHBUTTON      "Face Alarm",IDC_BTN_HUMAN_ALARM,15,114,60,15
+    PUSHBUTTON      "Face Param",IDC_BTN_HUMAN_PARAM,15,135,60,15
+END
+
+IDD_DLG_PLAYER DIALOGEX 0, 0, 466, 314
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "",IDC_STATIC_PLAYER_WND,7,7,452,267
+    PUSHBUTTON      "Start",IDC_BTN_START,260,293,43,14
+    PUSHBUTTON      "Stop",IDC_BTN_STOP,312,293,43,14
+    PUSHBUTTON      "Open Sound",IDC_BTN_OPEN_SOUND,364,293,43,14
+    PUSHBUTTON      "Close Sound",IDC_BTN_CLOSE_SOUND,416,293,43,14
+    CONTROL         "",IDC_SLIDER_PLAYER,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,7,277,452,15
+    EDITTEXT        IDC_EDT_FILE,7,293,193,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BTN_FILE,203,293,23,14
+END
+
+IDD_DLG_SEARCH DIALOGEX 0, 0, 466, 314
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_LIST_DEVICE,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,7,452,210
+    LTEXT           "IP",IDC_STATIC,60,240,35,8
+    EDITTEXT        IDC_EDIT_IP,103,236,74,14,ES_AUTOHSCROLL
+    LTEXT           "Media Port",IDC_STATIC,200,240,35,8
+    EDITTEXT        IDC_EDIT_PORT,244,235,74,14,ES_AUTOHSCROLL
+    LTEXT           "User Name",IDC_STATIC,60,257,35,8
+    EDITTEXT        IDC_EDIT_NAME,103,255,74,14,ES_AUTOHSCROLL
+    LTEXT           "Password",IDC_STATIC,200,257,35,8
+    EDITTEXT        IDC_EDIT_PASSWORD,244,255,74,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Add",IDC_BTN_ADD,346,274,50,14
+    PUSHBUTTON      "Refresh",IDC_BTN_REFRESH,345,235,50,14
+    LTEXT           "Web Port",IDC_STATIC,60,276,35,8
+    EDITTEXT        IDC_EDIT_WEB_PORT,103,274,74,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Modify",IDC_BTN_MODIFY,346,255,50,14
+    LTEXT           "Net Mode",IDC_STATIC,200,276,35,8
+    COMBOBOX        IDC_COMBO_NET_MODE,244,274,74,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_DLG_WINDOW DIALOGEX 0, 0, 281, 154
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_CLIPCHILDREN | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "",IDC_STATIC_WND,7,7,267,140
+END
+
+IDD_DLG_INFO DIALOGEX 0, 0, 316, 182
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_LIST1,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,7,302,168
+END
+
+IDD_DLG_WEB DIALOGEX 0, 0, 309, 176
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_EXPLORER_WEB,
+                    "{8856F961-340A-11D0-A96B-00C04FD705A2}",WS_TABSTOP,7,7,295,162
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_DLG_PREVIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 459
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 307
+    END
+
+    IDD_DLG_PLAYBACK, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 459
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 307
+    END
+
+    IDD_DLG_CONFIG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 459
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 307
+    END
+
+    IDD_DLG_PLAYER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 459
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 307
+    END
+
+    IDD_DLG_SEARCH, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 459
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 307
+    END
+
+    IDD_DLG_WINDOW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 274
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 147
+    END
+
+    IDD_DLG_INFO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 309
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 175
+    END
+
+    IDD_DLG_WEB, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 169
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP_LIST         BITMAP                  "res\\ImageList.bmp"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU_DEVICE_TREECTRL MENU
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "Start Preview",               ID_STARTPREVIEW
+        MENUITEM "Stop Preview",                ID_STOPPREVIEW
+        MENUITEM SEPARATOR
+        MENUITEM "Start Talk",                  ID_STARTTALK
+        MENUITEM "Stop Talk",                   ID_STOPTALK
+    END
+END
+
+IDR_MENU_STREAM_TYPE MENU
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "Main Stream",                 32780
+        MENUITEM "Sub Stream",                  32781
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_DLG_CONFIG AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_DLG_WEB AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_DLG_WEB DLGINIT
+BEGIN
+    IDC_EXPLORER_WEB, 0x376, 160, 0
+0x0000, 0x0000, 0x004c, 0x0000, 0x2dc9, 0x0000, 0x1b2f, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x004c, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xd0e0, 0x0057, 0x3573, 0x11cf, 0x69ae, 0x0008, 0x2e2b, 0x6212, 
+0x0008, 0x0000, 0x0000, 0x0000, 0x004c, 0x0000, 0x1401, 0x0002, 0x0000, 
+0x0000, 0x00c0, 0x0000, 0x0000, 0x4600, 0x0080, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+    0
+END
+
+#endif    // Chinese (Simplified, PRC) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_RSLIBDEMO_DIALOG DIALOGEX 0, 0, 600, 343
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "RSLibDemo"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_TREE_DEVICE,"SysTreeView32",WS_BORDER | WS_HSCROLL | WS_TABSTOP,7,7,106,329
+    CONTROL         "",IDC_TAB_GLOBAL,"SysTabControl32",0x0,123,7,470,329
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_RSLIBDEMO_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 593
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 336
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "CompanyName", "TODO: <Company name>"
+            VALUE "FileDescription", "TODO: <File description>"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "RSLibDemo.exe"
+            VALUE "LegalCopyright", "TODO: (c) <Company name>.  All rights reserved."
+            VALUE "OriginalFilename", "RSLibDemo.exe"
+            VALUE "ProductName", "TODO: <Product name>"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#include "res\RSLibDemo.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"     // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

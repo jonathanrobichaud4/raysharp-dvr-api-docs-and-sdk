@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C38BB5B3-DB99-4131-847B-CE63ABC41947}</ProjectGuid>
+    <RootNamespace>RSSDKWrapper</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>15.0.27924.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)../windows/Bin/\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)../windows/Bin64/\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)../windows/Bin/\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)../windows/Bin64/\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;RSSDKWRAPPER_EXPORTS;EXPORT_SDKWRAPPER_AS_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;RSSDKWRAPPER_EXPORTS;EXPORT_SDKWRAPPER_AS_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;RSSDKWRAPPER_EXPORTS;EXPORT_SDKWRAPPER_AS_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;RSSDKWRAPPER_EXPORTS;EXPORT_SDKWRAPPER_AS_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="DeviceManager\connection.h" />
+    <ClInclude Include="DeviceManager\download_record.h" />
+    <ClInclude Include="DeviceManager\forward_define.h" />
+    <ClInclude Include="DeviceManager\local_playback.h" />
+    <ClInclude Include="DeviceManager\preview.h" />
+    <ClInclude Include="DeviceManager\ptz_control.h" />
+    <ClInclude Include="DeviceManager\remote_playback.h" />
+    <ClInclude Include="DeviceManager\RSDevice.h" />
+    <ClInclude Include="DeviceManager\search_modify.h" />
+    <ClInclude Include="DeviceManager\search_record.h" />
+    <ClInclude Include="DeviceManager\sync_remote_playback.h" />
+    <ClInclude Include="Include\common_type.h" />
+    <ClInclude Include="Include\correction_type.h" />
+    <ClInclude Include="Include\RSNet.h" />
+    <ClInclude Include="Include\RSNetParameter.h" />
+    <ClInclude Include="Include\RSNetProtocol.h" />
+    <ClInclude Include="Include\RSPlay.h" />
+    <ClInclude Include="Include\RSSDKWrapper.h" />
+    <ClInclude Include="Include\RSTypedef.h" />
+    <ClInclude Include="JsonCpp\json-forwards.h" />
+    <ClInclude Include="JsonCpp\json.h" />
+    <ClInclude Include="JsonCpp\win-inttypes.h" />
+    <ClInclude Include="JsonCpp\win-stdint.h" />
+    <ClInclude Include="Paramers\AlarmAbnormity.h" />
+    <ClInclude Include="Paramers\Alarmblock.h" />
+    <ClInclude Include="Paramers\AlarmIO.h" />
+    <ClInclude Include="Paramers\AlarmMotion.h" />
+    <ClInclude Include="Paramers\AlarmNewIO.h" />
+    <ClInclude Include="Paramers\AlarmPIR.h" />
+    <ClInclude Include="Paramers\AlarmPlan.h" />
+    <ClInclude Include="Paramers\AlarmPtz.h" />
+    <ClInclude Include="Paramers\ALTEReport.h" />
+    <ClInclude Include="Paramers\AnalogCh.h" />
+    <ClInclude Include="Paramers\AutoUpgrade.h" />
+    <ClInclude Include="Paramers\CaptureJh.h" />
+    <ClInclude Include="Paramers\CaptureSet.h" />
+    <ClInclude Include="Paramers\ChLive.h" />
+    <ClInclude Include="Paramers\ChnInfo.h" />
+    <ClInclude Include="Paramers\Defaultparam.h" />
+    <ClInclude Include="Paramers\Devlog.h" />
+    <ClInclude Include="Paramers\DropboxParam.h" />
+    <ClInclude Include="Paramers\EmailPlan.h" />
+    <ClInclude Include="Paramers\EncodeStream.h" />
+    <ClInclude Include="Paramers\EPlatform.h" />
+    <ClInclude Include="Paramers\FaceDetection.h" />
+    <ClInclude Include="Paramers\FishEye.h" />
+    <ClInclude Include="Paramers\FloodLight.h" />
+    <ClInclude Include="Paramers\FTP.h" />
+    <ClInclude Include="Paramers\GB28181.h" />
+    <ClInclude Include="Paramers\GoodsLostLegacy.h" />
+    <ClInclude Include="Paramers\HttpSet.h" />
+    <ClInclude Include="Paramers\HumanDetection.h" />
+    <ClInclude Include="Paramers\IEEEX.h" />
+    <ClInclude Include="Paramers\ImgCtrl.h" />
+    <ClInclude Include="Paramers\IntelligentNewUser.h" />
+    <ClInclude Include="Paramers\IntelligentPlan.h" />
+    <ClInclude Include="Paramers\IntrusionDetection.h" />
+    <ClInclude Include="Paramers\IOAlarmManage.h" />
+    <ClInclude Include="Paramers\IPCSet.h" />
+    <ClInclude Include="Paramers\IPFilter.h" />
+    <ClInclude Include="Paramers\IPFilterList.h" />
+    <ClInclude Include="Paramers\JsonPage.h" />
+    <ClInclude Include="Paramers\LensShade.h" />
+    <ClInclude Include="Paramers\LiveParam.h" />
+    <ClInclude Include="Paramers\NetBase.h" />
+    <ClInclude Include="Paramers\NetDNS.h" />
+    <ClInclude Include="Paramers\NetEmail.h" />
+    <ClInclude Include="Paramers\NetFilter.h" />
+    <ClInclude Include="Paramers\NewNetEmail.h" />
+    <ClInclude Include="Paramers\NormalCloSto.h" />
+    <ClInclude Include="Paramers\NormalCloStoEm.h" />
+    <ClInclude Include="Paramers\ParamBase.h" />
+    <ClInclude Include="Paramers\PeopleCrossCounting.h" />
+    <ClInclude Include="Paramers\PerimeterLine.h" />
+    <ClInclude Include="Paramers\PerimeterZone.h" />
+    <ClInclude Include="Paramers\PlatformSet.h" />
+    <ClInclude Include="Paramers\ProManage.h" />
+    <ClInclude Include="Paramers\RecConfig.h" />
+    <ClInclude Include="Paramers\RecInfo.h" />
+    <ClInclude Include="Paramers\RecPlan.h" />
+    <ClInclude Include="Paramers\RecPlanIPC.h" />
+    <ClInclude Include="Paramers\RecPlanSmart.h" />
+    <ClInclude Include="Paramers\RedMantleDetection.h" />
+    <ClInclude Include="Paramers\RSPush.h" />
+    <ClInclude Include="Paramers\RSPushSubscription.h" />
+    <ClInclude Include="Paramers\RTSP.h" />
+    <ClInclude Include="Paramers\SendCertificate.h" />
+    <ClInclude Include="Paramers\ShowIntell.h" />
+    <ClInclude Include="Paramers\SNMP.h" />
+    <ClInclude Include="Paramers\SoundAlarm.h" />
+    <ClInclude Include="Paramers\SSL.h" />
+    <ClInclude Include="Paramers\StdAfx.h" />
+    <ClInclude Include="Paramers\SwannCloSto.h" />
+    <ClInclude Include="Paramers\SwannWifi.h" />
+    <ClInclude Include="Paramers\SwitchSet.h" />
+    <ClInclude Include="Paramers\SXHTTPS.h" />
+    <ClInclude Include="Paramers\SysInfBase.h" />
+    <ClInclude Include="Paramers\SysInfHdd.h" />
+    <ClInclude Include="Paramers\SysMaintain.h" />
+    <ClInclude Include="Paramers\SysParamDst.h" />
+    <ClInclude Include="Paramers\SysParamPTZ.h" />
+    <ClInclude Include="Paramers\SysParamSerial.h" />
+    <ClInclude Include="Paramers\SysParamUSer.h" />
+    <ClInclude Include="Paramers\SystemID.h" />
+    <ClInclude Include="Paramers\TypeMeterRecognition.h" />
+    <ClInclude Include="Paramers\UserAF.h" />
+    <ClInclude Include="Paramers\VideoCover.h" />
+    <ClInclude Include="Paramers\VideoOutput.h" />
+    <ClInclude Include="Paramers\VideoRoi.h" />
+    <ClInclude Include="Paramers\VideoSet.h" />
+    <ClInclude Include="Paramers\Voicectrl.h" />
+    <ClInclude Include="Paramers\XinQiaoFD.h" />
+    <ClInclude Include="Paramers\ZeroChannel.h" />
+    <ClInclude Include="Remote\ParamRemoteTest.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DeviceManager\RSDevice.cpp" />
+    <ClCompile Include="Include\RSSDKWrapper.cpp" />
+    <ClCompile Include="JsonCpp\jsoncpp.cpp" />
+    <ClCompile Include="Paramers\AlarmAbnormity.cpp" />
+    <ClCompile Include="Paramers\Alarmblock.cpp" />
+    <ClCompile Include="Paramers\AlarmIO.cpp" />
+    <ClCompile Include="Paramers\AlarmMotion.cpp" />
+    <ClCompile Include="Paramers\AlarmNewIO.cpp" />
+    <ClCompile Include="Paramers\AlarmPIR.cpp" />
+    <ClCompile Include="Paramers\AlarmPlan.cpp" />
+    <ClCompile Include="Paramers\AlarmPtz.cpp" />
+    <ClCompile Include="Paramers\ALTEReport.cpp" />
+    <ClCompile Include="Paramers\AnalogCh.cpp" />
+    <ClCompile Include="Paramers\AutoUpgrade.cpp" />
+    <ClCompile Include="Paramers\CaptureJh.cpp" />
+    <ClCompile Include="Paramers\CaptureSet.cpp" />
+    <ClCompile Include="Paramers\ChLive.cpp" />
+    <ClCompile Include="Paramers\ChnInfo.cpp" />
+    <ClCompile Include="Paramers\Defaultparam.cpp" />
+    <ClCompile Include="Paramers\Devlog.cpp" />
+    <ClCompile Include="Paramers\DropboxParam.cpp" />
+    <ClCompile Include="Paramers\EmailPlan.cpp" />
+    <ClCompile Include="Paramers\EncodeStream.cpp" />
+    <ClCompile Include="Paramers\EPlatform.cpp" />
+    <ClCompile Include="Paramers\FaceDetection.cpp" />
+    <ClCompile Include="Paramers\FishEye.cpp" />
+    <ClCompile Include="Paramers\FloodLight.cpp" />
+    <ClCompile Include="Paramers\FTP.cpp" />
+    <ClCompile Include="Paramers\GB28181.cpp" />
+    <ClCompile Include="Paramers\GoodsLostLegacy.cpp" />
+    <ClCompile Include="Paramers\HttpSet.cpp" />
+    <ClCompile Include="Paramers\HumanDetection.cpp" />
+    <ClCompile Include="Paramers\IEEEX.cpp" />
+    <ClCompile Include="Paramers\ImgCtrl.cpp" />
+    <ClCompile Include="Paramers\IntelligentNewUser.cpp" />
+    <ClCompile Include="Paramers\IntelligentPlan.cpp" />
+    <ClCompile Include="Paramers\IntrusionDetection.cpp" />
+    <ClCompile Include="Paramers\IOAlarmManage.cpp" />
+    <ClCompile Include="Paramers\IPCSet.cpp" />
+    <ClCompile Include="Paramers\IPFilter.cpp" />
+    <ClCompile Include="Paramers\IPFilterList.cpp" />
+    <ClCompile Include="Paramers\JsonPage.cpp" />
+    <ClCompile Include="Paramers\LensShade.cpp" />
+    <ClCompile Include="Paramers\LiveParam.cpp" />
+    <ClCompile Include="Paramers\NetBase.cpp" />
+    <ClCompile Include="Paramers\NetDNS.cpp" />
+    <ClCompile Include="Paramers\NetEmail.cpp" />
+    <ClCompile Include="Paramers\NetFilter.cpp" />
+    <ClCompile Include="Paramers\NewNetEmail.cpp" />
+    <ClCompile Include="Paramers\NormalCloSto.cpp" />
+    <ClCompile Include="Paramers\NormalCloStoEm.cpp" />
+    <ClCompile Include="Paramers\ParamBase.cpp" />
+    <ClCompile Include="Paramers\PeopleCrossCounting.cpp" />
+    <ClCompile Include="Paramers\PerimeterLine.cpp" />
+    <ClCompile Include="Paramers\PerimeterZone.cpp" />
+    <ClCompile Include="Paramers\PlatformSet.cpp" />
+    <ClCompile Include="Paramers\ProManage.cpp" />
+    <ClCompile Include="Paramers\RecConfig.cpp" />
+    <ClCompile Include="Paramers\RecInfo.cpp" />
+    <ClCompile Include="Paramers\RecPlan.cpp" />
+    <ClCompile Include="Paramers\RecPlanIPC.cpp" />
+    <ClCompile Include="Paramers\RecPlanSmart.cpp" />
+    <ClCompile Include="Paramers\RedMantleDetection.cpp" />
+    <ClCompile Include="Paramers\RSPush.cpp" />
+    <ClCompile Include="Paramers\RSPushSubscription.cpp" />
+    <ClCompile Include="Paramers\RTSP.cpp" />
+    <ClCompile Include="Paramers\SendCertificate.cpp" />
+    <ClCompile Include="Paramers\ShowIntell.cpp" />
+    <ClCompile Include="Paramers\SNMP.cpp" />
+    <ClCompile Include="Paramers\SoundAlarm.cpp" />
+    <ClCompile Include="Paramers\SSL.cpp" />
+    <ClCompile Include="Paramers\SwannCloSto.cpp" />
+    <ClCompile Include="Paramers\SwannWifi.cpp" />
+    <ClCompile Include="Paramers\SwitchSet.cpp" />
+    <ClCompile Include="Paramers\SXHTTPS.cpp" />
+    <ClCompile Include="Paramers\SysInfBase.cpp" />
+    <ClCompile Include="Paramers\SysInfHdd.cpp" />
+    <ClCompile Include="Paramers\SysMaintain.cpp" />
+    <ClCompile Include="Paramers\SysParamDst.cpp" />
+    <ClCompile Include="Paramers\SysParamPTZ.cpp" />
+    <ClCompile Include="Paramers\SysParamSerial.cpp" />
+    <ClCompile Include="Paramers\SysParamUSer.cpp" />
+    <ClCompile Include="Paramers\SystemID.cpp" />
+    <ClCompile Include="Paramers\TypeMeterRecognition.cpp" />
+    <ClCompile Include="Paramers\UserAF.cpp" />
+    <ClCompile Include="Paramers\VideoCover.cpp" />
+    <ClCompile Include="Paramers\VideoOutput.cpp" />
+    <ClCompile Include="Paramers\VideoRoi.cpp" />
+    <ClCompile Include="Paramers\VideoSet.cpp" />
+    <ClCompile Include="Paramers\Voicectrl.cpp" />
+    <ClCompile Include="Paramers\XinQiaoFD.cpp" />
+    <ClCompile Include="Paramers\ZeroChannel.cpp" />
+    <ClCompile Include="Remote\ParamRemoteTest.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

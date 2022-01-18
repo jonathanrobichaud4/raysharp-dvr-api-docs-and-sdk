@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RSSDKWrapper", "RSSDKWrapper.vcxproj", "{C38BB5B3-DB99-4131-847B-CE63ABC41947}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C38BB5B3-DB99-4131-847B-CE63ABC41947}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C38BB5B3-DB99-4131-847B-CE63ABC41947}.Debug|Win32.Build.0 = Debug|Win32
+		{C38BB5B3-DB99-4131-847B-CE63ABC41947}.Debug|x64.ActiveCfg = Debug|x64
+		{C38BB5B3-DB99-4131-847B-CE63ABC41947}.Debug|x64.Build.0 = Debug|x64
+		{C38BB5B3-DB99-4131-847B-CE63ABC41947}.Release|Win32.ActiveCfg = Release|Win32
+		{C38BB5B3-DB99-4131-847B-CE63ABC41947}.Release|Win32.Build.0 = Release|Win32
+		{C38BB5B3-DB99-4131-847B-CE63ABC41947}.Release|x64.ActiveCfg = Release|x64
+		{C38BB5B3-DB99-4131-847B-CE63ABC41947}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0637493A-2400-46D0-BAAA-823BA19E0EE2}
+	EndGlobalSection
+EndGlobal

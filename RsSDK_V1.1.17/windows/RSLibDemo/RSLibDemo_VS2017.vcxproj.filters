@@ -1,0 +1,414 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{d570c86c-e1ce-4a43-8684-598fa5eada97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{7610a199-ed9c-4a82-9cd5-2968169ee1ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDKWrapper">
+      <UniqueIdentifier>{f3f95b77-cd0b-48a0-be3a-f9277e256721}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{79790145-2ae6-4b2d-92ae-19dc74acf2b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDKWrapper\DeviceManager">
+      <UniqueIdentifier>{a37b6b4d-624f-459d-9d65-37482bf6c00a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDKWrapper\Include">
+      <UniqueIdentifier>{64799c82-b01f-4535-b196-e2dc00f6d283}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDKWrapper\JsonCpp">
+      <UniqueIdentifier>{6823ad72-be13-4f73-a173-8b260858a073}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDKWrapper\Paramers">
+      <UniqueIdentifier>{544fcc74-96e8-486f-be03-5c2e01c7499e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDKWrapper\Remote">
+      <UniqueIdentifier>{8e92047c-72b8-478f-a3f5-136d6e4b83f6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ConfigDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LogInfoDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PlaybackDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PreviewDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RSLibDemo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RSLibDemoDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RSSliderCtrl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SearchDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticWnd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\DeviceManager\connection.h">
+      <Filter>SDKWrapper\DeviceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\DeviceManager\download_record.h">
+      <Filter>SDKWrapper\DeviceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\DeviceManager\forward_define.h">
+      <Filter>SDKWrapper\DeviceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\DeviceManager\local_playback.h">
+      <Filter>SDKWrapper\DeviceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\DeviceManager\preview.h">
+      <Filter>SDKWrapper\DeviceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\DeviceManager\ptz_control.h">
+      <Filter>SDKWrapper\DeviceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\DeviceManager\remote_playback.h">
+      <Filter>SDKWrapper\DeviceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\DeviceManager\RSDevice.h">
+      <Filter>SDKWrapper\DeviceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\DeviceManager\search_modify.h">
+      <Filter>SDKWrapper\DeviceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\DeviceManager\search_record.h">
+      <Filter>SDKWrapper\DeviceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\Include\common_type.h">
+      <Filter>SDKWrapper\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\Include\correction_type.h">
+      <Filter>SDKWrapper\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\Include\RSNet.h">
+      <Filter>SDKWrapper\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\Include\RSNetParameter.h">
+      <Filter>SDKWrapper\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\Include\RSNetProtocol.h">
+      <Filter>SDKWrapper\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\Include\RSPlay.h">
+      <Filter>SDKWrapper\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\Include\RSSDKWrapper.h">
+      <Filter>SDKWrapper\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\Include\RSTypedef.h">
+      <Filter>SDKWrapper\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\JsonCpp\json.h">
+      <Filter>SDKWrapper\JsonCpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\JsonCpp\json-forwards.h">
+      <Filter>SDKWrapper\JsonCpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\JsonCpp\win-inttypes.h">
+      <Filter>SDKWrapper\JsonCpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\JsonCpp\win-stdint.h">
+      <Filter>SDKWrapper\JsonCpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\Paramers\ChLive.h">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\Paramers\ParamBase.h">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\Paramers\RSPush.h">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="Markup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\Paramers\SysParamDst.h">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\Paramers\SysParamUSer.h">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\Paramers\AlarmIO.h">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\Paramers\AlarmMotion.h">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\Paramers\AlarmNewIO.h">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\Paramers\AlarmPIR.h">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\Paramers\base64.h">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\Paramers\DropboxParam.h">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\Paramers\EncodeStream.h">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\Paramers\FloodLight.h">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\Paramers\IPCSet.h">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\Paramers\JsonPage.h">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\Paramers\LiveParam.h">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\Paramers\NetBase.h">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\Paramers\NewNetEmail.h">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\Paramers\RecPlan.h">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\Paramers\RecPlanIPC.h">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\Paramers\RSPushSubscription.h">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\Paramers\SwannCloSto.h">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\Paramers\SysInfBase.h">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\Paramers\SysInfHdd.h">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\Remote\ParamRemoteTest.h">
+      <Filter>SDKWrapper\Remote</Filter>
+    </ClInclude>
+    <ClInclude Include="MiniDumper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\DeviceManager\authority_ability.h">
+      <Filter>SDKWrapper\DeviceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\DeviceManager\capture_from_device.h">
+      <Filter>SDKWrapper\DeviceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\DeviceManager\convert_file_type.h">
+      <Filter>SDKWrapper\DeviceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\DeviceManager\human_face.h">
+      <Filter>SDKWrapper\DeviceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\DeviceManager\local_playback_thumbnails.h">
+      <Filter>SDKWrapper\DeviceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\DeviceManager\log.h">
+      <Filter>SDKWrapper\DeviceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\DeviceManager\md5.h">
+      <Filter>SDKWrapper\DeviceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\DeviceManager\remote_playback_thumbnails.h">
+      <Filter>SDKWrapper\DeviceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\DeviceManager\sync_playback.h">
+      <Filter>SDKWrapper\DeviceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\DeviceManager\talk.h">
+      <Filter>SDKWrapper\DeviceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SDKWrapper\DeviceManager\upgrade.h">
+      <Filter>SDKWrapper\DeviceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="CWebBrowser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WebbrowserDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\ImageList.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\RSLibDemo.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\RSLibDemo.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="RSLibDemo.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ConfigDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LogInfoDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PlaybackDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PreviewDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RSLibDemo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RSLibDemoDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RSSliderCtrl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SearchDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticWnd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SDKWrapper\DeviceManager\RSDevice.cpp">
+      <Filter>SDKWrapper\DeviceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SDKWrapper\Include\RSSDKWrapper.cpp">
+      <Filter>SDKWrapper\Include</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SDKWrapper\JsonCpp\jsoncpp.cpp">
+      <Filter>SDKWrapper\JsonCpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SDKWrapper\Paramers\ChLive.cpp">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SDKWrapper\Paramers\ParamBase.cpp">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SDKWrapper\Paramers\RSPush.cpp">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="Markup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SDKWrapper\Paramers\SysParamDst.cpp">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SDKWrapper\Paramers\AlarmIO.cpp">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SDKWrapper\Paramers\AlarmMotion.cpp">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SDKWrapper\Paramers\AlarmNewIO.cpp">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SDKWrapper\Paramers\AlarmPIR.cpp">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SDKWrapper\Paramers\base64.cpp">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SDKWrapper\Paramers\DropboxParam.cpp">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SDKWrapper\Paramers\EncodeStream.cpp">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SDKWrapper\Paramers\FloodLight.cpp">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SDKWrapper\Paramers\IPCSet.cpp">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SDKWrapper\Paramers\JsonPage.cpp">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SDKWrapper\Paramers\LiveParam.cpp">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SDKWrapper\Paramers\NetBase.cpp">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SDKWrapper\Paramers\NewNetEmail.cpp">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SDKWrapper\Paramers\RecPlan.cpp">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SDKWrapper\Paramers\RecPlanIPC.cpp">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SDKWrapper\Paramers\RSPushSubscription.cpp">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SDKWrapper\Paramers\SwannCloSto.cpp">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SDKWrapper\Paramers\SysInfBase.cpp">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SDKWrapper\Paramers\SysInfHdd.cpp">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SDKWrapper\Paramers\SysParamUSer.cpp">
+      <Filter>SDKWrapper\Paramers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SDKWrapper\Remote\ParamRemoteTest.cpp">
+      <Filter>SDKWrapper\Remote</Filter>
+    </ClCompile>
+    <ClCompile Include="MiniDumper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CWebBrowser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WebbrowserDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

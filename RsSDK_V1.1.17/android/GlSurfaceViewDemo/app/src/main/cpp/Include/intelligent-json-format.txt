@@ -1,0 +1,1724 @@
+通信的Json格式大致如下：
+{
+  "msgType": "AI_xxx",
+  "data": {
+    "MsgId": null    // 可为任意对象，设备端不使用，原值回传，用途由客户端自己决定
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////
+enum DLDetectType {
+	DLDT_Face,      /*!< 人脸 */
+	DLDT_Car,       /*!< 车 */
+	DLDT_Max
+};
+
+enum AI_OPT_RESULT_TYPE {
+    AORT_SUCCESS = 0,                /*!< 成功 */
+    AORT_NO_DB = -1,                 /*!< 无数据库 */
+    AORT_DB_EXEC_FAILED = -2,        /*!< 数据库执行失败 */
+    AORT_CALC_FEATURE_FAILED = -3,   /*!< 特征提取失败 */
+    AORT_CANCELED = -4,              /*!< 已取消 */
+    AORT_NO_DISK = -5,               /*!< 无硬盘 */
+    AORT_DISK_ERROR = -6,            /*!< 硬盘出错 */
+    AORT_EXIST = -7,                 /*!< 已存在 */
+    AORT_GROUP_INVALID = -8,         /*!< 组无效 */
+    AORT_NOT_EXIST = -9,             /*!< 不存在 */
+    AORT_MORE_FILE_EXIST = -10,
+    AORT_SEARCH_ERROR = -11,	     /*!< 搜索出错 */
+    AORT_OVER_MAX_COUNT = -12,		 /*!< 超出了上限 */
+    AORT_UPDATING_FEATURE = -13,     /*!< 正在更新特征值 */
+    AORT_NO_USABLE_IPC = -14,        /*!< 没有可用于特征值计算的IPC */
+    AORT_INVALID_PARAM = -15         /*!< 无效参数 */
+};
+
+
+////////////////////////////////////////////////////////////////////////////////////////
+1. 添加人脸组，只需给定DetectType字段，见DLDetectType枚举，请求格式如下：
+{
+	"msgType": "AI_addGroup",
+	"data": {
+		"MsgId": null,
+		"Group": [
+			{
+				"Id": -1,
+				"Name": "",
+				"DetectType": 0, 			// 检测类型，见 DLDetectType
+				"Policy": 0,
+				"Enabled": 1,
+				"CanDel": 1,
+				"ChnAlarmOut": [],
+				"ChnBuzzerOpt": [],
+				"LatchTimeOpt": [],
+				"SaveImg": [],
+				"SendEmail": [],
+				"UploadToFtp": [],
+				"UploadToCloud": [],
+				"ShowThumbnail": [],
+				"Record": [],
+				"Push": [],
+				"AlarmSchedule":[]
+			}
+		]
+	}
+}
+回应消息格式：
+1）成功：
+{
+	"msgType": "AI_addGroup",
+	"data": {
+		"MsgId": null,
+		"Result": 0,
+		"Group": [
+			{
+				"Id": 4,
+				"Name": "Group 5",
+				"DetectType": 0, 
+				"Policy": 0,
+				"Enabled": 1,
+				"CanDel": 1,
+				"ChnAlarmOut": [			// 每一个元素表示一个报警输出，前4个表示本地报警输出，后两个表示前端（IPC）报警输出
+					[255, 255, 0, 255],		// 每一个bit表示一个对应的通道是否触发报警输出
+					[0, 0, 255, 0],
+					[255, 0, 0, 255],
+					[0, 0, 0, 0, 255]
+					[0, 0, 0, 0, 255]
+					[0, 0, 0, 0, 255]
+				],
+				"ChnBuzzerOpt": [0, 1, 1, 2, 3, 4, 0, 1, 1, 3, 2, 2 ],   // 每个元素表示一个通道的蜂鸣器配置
+				"LatchTimeOpt": [0, 1, 1, 2, 3, 4, 0, 1, 1, 3, 2, 2 ], 	 // 每个元素表示一个通道的报警输出时长
+				"SaveImg": [255, 255, 255, 255, 255, 255, 255, 255],	 // 每个元素表示一个通道是否保存图片的配置
+				"SendEmail": [0, 0, 0, 0],								 // 按比特位使用，每个bit位表示一个通道是否发送邮件
+				"UploadToFtp": [255, 255, 255, 255],					 // 按比特位使用
+				"UploadToCloud": [0, 0, 0, 0],					 		 // 按比特位使用
+				"ShowThumbnail": [255, 255, 255, 255],					 // 按比特位使用
+				"Record": [255, 255, 255, 255],					 		 // 按比特位使用
+				"Push": [0, 0, 0, 0],					 				 // 按比特位使用
+				"AlarmSchedule": [										 // 报警计划表
+					[				// 通道 0
+						[255, 255, 255, 255, 255, 255],		// 周一，每个bit代表半个小时，总共48bit，置位表示报警，反之不报警
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255]		// 周日
+					],
+					[				// 通道 1
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255]
+					],
+					...				// 通道 n
+				]
+			}
+		]
+	}
+}
+2）失败：
+{
+	"msgType": "AI_addGroup",
+	"data": {
+		"MsgId": null,
+		"Result": -1,	// 具体错误码，见 AI_OPT_RESULT_TYPE 枚举
+		"Group": []
+	}
+}
+
+
+2. 修改人脸组报警设置，修改时需要给定操作类型和组的完整信息，如下：
+{
+	"msgType": "AI_modifyGroup",
+	"data": {
+		"MsgId": null,
+		"Group": [
+			{
+				"Id": 1,
+				"Name": "Allow List",
+				"DetectType": 0, 
+				"Policy": 0,
+				"Enabled": 1,
+				"CanDel": 1,
+				"ChnAlarmOut": [
+					[255, 255, 0, 255],
+					[0, 0, 255, 0],
+					[255, 0, 0, 255],
+					[0, 0, 0, 0, 255]
+				],
+				"ChnBuzzerOpt": [0, 1, 1, 2, 3, 4, 0, 1, 1, 3, 2, 2 ],
+				"LatchTimeOpt": [0, 1, 1, 2, 3, 4, 0, 1, 1, 3, 2, 2 ],
+				"SaveImg": [255, 255, 255, 255],
+				"SendEmail": [0, 0, 0, 0],
+				"UploadToFtp": [255, 255, 255, 255],
+				"UploadToCloud": [0, 0, 0, 0],
+				"ShowThumbnail": [255, 255, 255, 255],
+				"Record": [255, 255, 255, 255],
+				"Push": [0, 0, 0, 0],
+				"AlarmSchedule": [
+					[				// 通道 0
+						[255, 255, 255, 255, 255, 255],		// 周日，每个bit代表半个小时，总共48bit，置位表示录像，反之不录像
+						[255, 255, 255, 255, 255, 255],		// 周一
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255]		// 周六
+					],
+					[				// 通道 1
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255]
+					],
+					...				// 通道 n
+				]
+			}
+		]
+	}
+}
+回应消息格式：
+{
+	"msgType": "AI_modifyGroup",
+	"data": {
+		"MsgId": null,
+		"Result": 0  // 具体错误码，见 AI_OPT_RESULT_TYPE 枚举
+	}
+}
+
+
+3. 删除人脸组，只需给定要删除的组Id，如下：（注意，预定义组不能删除，由“CanDel”字段来标识）
+{
+	"msgType": "AI_deleteGroup",
+	"data": {
+		"MsgId": null,					
+		"Group": [
+			{
+				"Id": 4,
+				"Name": "",
+				"DetectType": 0, 			
+				"Policy": 0,
+				"Enabled": 1,
+				"CanDel": 1,
+				"ChnAlarmOut": [],
+				"ChnBuzzerOpt": [],
+				"LatchTimeOpt": [],
+				"SaveImg": [],
+				"SendEmail": [],
+				"UploadToFtp": [],
+				"UploadToCloud": [],
+				"ShowThumbnail": []
+				"Record": [],
+				"Push": [],
+				"AlarmSchedule":[]
+			}
+		]
+	}
+}
+回应消息格式：
+{
+	"msgType": "AI_deleteGroup",
+	"data": {
+		"MsgId": null,
+		"Result": 0  // 具体错误码，见 AI_OPT_RESULT_TYPE 枚举
+	}
+}
+
+
+4. Group查询请求消息格式：
+{
+	"msgType": "AI_getGroupConfig",
+	"data": {
+		"MsgId": null,
+		"TypeFlags": 1,		// 要获取的组的检测类型组合，如 (0x1 << DLDT_Face | 0x1 << DLDT_Car)
+		"DefaultVal": 0,	// 获取默认报警参数还是实际报警参数，1-默认参数（供页面Default使用），0-实际参数
+		"WithInternal": 1   // 是否包含内部组，内部组不开放给用户使用，只供存储常用人脸，客户端想获取常用人脸列表时要使用Internal组Id
+		"SimpleInfo": 0		// 获取简略信息还是完整信息，简略信息只包含Group名和组Id，完整信息包含组的所有参数。 1-获取简略信息， 0-完整信息
+	}
+}
+回应消息格式：
+（1）成功
+{
+	"msgType": "AI_getGroupConfig",
+	"data": {
+		"MsgId": null,
+		"Result": 0,
+		"Count": 5,		// 组数
+		"Group": [
+			{
+				"Id": 0,
+				"Name": "Internal",
+				"DetectType": 0,
+				"Policy": 0,
+				"Enabled": 1,
+				"CanDel": 0,
+				"ChnAlarmOut": [
+					  [255, 255, 0, 255],
+					  [0, 0, 255, 0],
+					  [255, 0, 0, 255],
+					  [0, 0, 0, 0, 255]
+				  ],
+				  "ChnBuzzerOpt": [0, 1, 1, 2, 3, 4, 0, 1, 1, 3, 2, 2 ],
+				  "LatchTimeOpt": [0, 1, 1, 2, 3, 4, 0, 1, 1, 3, 2, 2 ],
+				  "SaveImg": [255, 255, 255, 255],
+				  "SendEmail": [0, 0, 0, 0],
+				  "UploadToFtp": [255, 255, 255, 255],
+				  "UploadToCloud": [0, 0, 0, 0],
+				  "ShowThumbnail": [255, 255, 255, 255],
+				  "Record": [255, 255, 255, 255],
+				  "Push": [0, 0, 0, 0],
+				  "AlarmSchedule": [
+					[				// 通道 0
+						[255, 255, 255, 255, 255, 255],		// 周一，每个bit代表半个小时，总共48bit，置位表示录像，反之不录像
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255]		// 周日
+					],
+					[				// 通道 1
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255]
+					],
+					...				// 通道 n
+				]
+
+			},
+			
+			{
+				"Id": 1,
+				"Name": "Allow List",
+				"DetectType": 0,
+				"Policy": 0,
+				"Enabled": 1,
+				"CanDel": 0,
+				"ChnAlarmOut": [
+					  [255, 255, 0, 255],
+					  [0, 0, 255, 0],
+					  [255, 0, 0, 255],
+					  [0, 0, 0, 0, 255]
+				  ],
+				  "ChnBuzzerOpt": [0, 1, 1, 2, 3, 4, 0, 1, 1, 3, 2, 2 ],
+				  "LatchTimeOpt": [0, 1, 1, 2, 3, 4, 0, 1, 1, 3, 2, 2 ],
+				  "SaveImg": [255, 255, 255, 255],
+				  "SendEmail": [0, 0, 0, 0],
+				  "UploadToFtp": [255, 255, 255, 255],
+				  "UploadToCloud": [0, 0, 0, 0],
+				  "ShowThumbnail": [255, 255, 255, 255],
+				  "Record": [255, 255, 255, 255],
+				  "Push": [0, 0, 0, 0],
+				  "AlarmSchedule": [
+					[				// 通道 0
+						[255, 255, 255, 255, 255, 255],		// 周一，每个bit代表半个小时，总共48bit，置位表示录像，反之不录像
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255]		// 周日
+					],
+					[				// 通道 1
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255]
+					],
+					...				// 通道 n
+				]
+
+			},
+			
+			{
+				"Id": 2,
+				"Name": "Block List",
+				"DetectType": 0,
+				"Policy": 0,
+				"Enabled": 1,
+				"CanDel": 0,
+				"ChnAlarmOut": [
+					  [255, 255, 0, 255],
+					  [0, 0, 255, 0],
+					  [255, 0, 0, 255],
+					  [0, 0, 0, 0, 255]
+				  ],
+				  "ChnBuzzerOpt": [0, 1, 1, 2, 3, 4, 0, 1, 1, 3, 2, 2 ],
+				  "LatchTimeOpt": [0, 1, 1, 2, 3, 4, 0, 1, 1, 3, 2, 2 ],
+				  "SaveImg": [255, 255, 255, 255],
+				  "SendEmail": [0, 0, 0, 0],
+				  "UploadToFtp": [255, 255, 255, 255],
+				  "UploadToCloud": [0, 0, 0, 0],
+				  "ShowThumbnail": [255, 255, 255, 255],
+				  "Record": [255, 255, 255, 255],
+				  "Push": [0, 0, 0, 0],
+				  "AlarmSchedule": [
+					[				// 通道 0
+						[255, 255, 255, 255, 255, 255],		// 周一，每个bit代表半个小时，总共48bit，置位表示录像，反之不录像
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255]		// 周日
+					],
+					[				// 通道 1
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255]
+					],
+					...				// 通道 n
+				]
+
+			},
+			
+			{
+				"Id": 3,
+				"Name": "Stranger",
+				"DetectType": 0,
+				"Policy": 0,
+				"Enabled": 1,
+				"CanDel": 0,
+				"ChnAlarmOut": [
+					  [255, 255, 0, 255],
+					  [0, 0, 255, 0],
+					  [255, 0, 0, 255],
+					  [0, 0, 0, 0, 255]
+				  ],
+				  "ChnBuzzerOpt": [0, 1, 1, 2, 3, 4, 0, 1, 1, 3, 2, 2 ],
+				  "LatchTimeOpt": [0, 1, 1, 2, 3, 4, 0, 1, 1, 3, 2, 2 ],
+				  "SaveImg": [255, 255, 255, 255],
+				  "SendEmail": [0, 0, 0, 0],
+				  "UploadToFtp": [255, 255, 255, 255],
+				  "UploadToCloud": [0, 0, 0, 0],
+				  "ShowThumbnail": [255, 255, 255, 255],
+				  "Record": [255, 255, 255, 255],
+				  "Push": [0, 0, 0, 0],
+				  "AlarmSchedule": [
+					[				// 通道 0
+						[255, 255, 255, 255, 255, 255],		// 周一，每个bit代表半个小时，总共48bit，置位表示录像，反之不录像
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255]		// 周日
+					],
+					[				// 通道 1
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255]
+					],
+					...				// 通道 n
+				]
+
+			},
+			
+			{
+				"Id": 4,
+				"Name": "My Group",
+				"DetectType": 0,
+				"Policy": 0,
+				"Enabled": 1,
+				"CanDel": 0,
+				"ChnAlarmOut": [
+					  [255, 255, 0, 255],
+					  [0, 0, 255, 0],
+					  [255, 0, 0, 255],
+					  [0, 0, 0, 0, 255]
+				  ],
+				  "ChnBuzzerOpt": [0, 1, 1, 2, 3, 4, 0, 1, 1, 3, 2, 2 ],
+				  "LatchTimeOpt": [0, 1, 1, 2, 3, 4, 0, 1, 1, 3, 2, 2 ],
+				  "SaveImg": [255, 255, 255, 255],
+				  "SendEmail": [0, 0, 0, 0],
+				  "UploadToFtp": [255, 255, 255, 255],
+				  "UploadToCloud": [0, 0, 0, 0],
+				  "ShowThumbnail": [255, 255, 255, 255],
+				  "AlarmSchedule": [
+					[				// 通道 0
+						[255, 255, 255, 255, 255, 255],		// 周一，每个bit代表半个小时，总共48bit，置位表示录像，反之不录像
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255]		// 周日
+					],
+					[				// 通道 1
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255],
+						[255, 255, 255, 255, 255, 255]
+					],
+					...				// 通道 n
+				]
+
+			}
+		]
+	}
+}
+（2）失败：
+{
+	"msgType": "AI_getGroupConfig",
+	"data": {
+		"MsgId": null,
+		"Result": -1,  // 具体错误码，见 AI_OPT_RESULT_TYPE 枚举
+		"Count": 0,
+		"Group": []
+	}
+}
+
+
+5. 添加人脸，添加人脸时必须指定"GrpId"和"Image1"，如果有特征值则给定特征值，支持同时添加多个人脸信息，
+请求格式如下：
+{
+	"msgType": "AI_addFaces",
+	"data": {
+		"MsgId": null,
+		"Count": 2,
+		"FaceInfo": [
+			{
+				"Id": -1,		// 64位有符号人脸Id，唯一标识
+				"GrpId": 1,		// 组
+				"Time": 0,
+				"Similarity": 0,
+				"Sex": 0,		// 性别：0-男， 1-女
+				"Age": 26,
+				"Chn": 0,
+				"ModifyCnt": 0,			// 修改次数，上层只读，由设备端在每次修改该人脸信息时实时更新
+				"Image1": "base64(imgData)",		// 添加时必须给定，为数据库人脸主图片
+				"Image2": null,			// 该参数只在实时报警时有用
+				"Image3": null,			// 该参数只在实时报警时有用
+				"Feature": "base64(feature)",
+				"FtVersion": 0			// 特征值版本，只有版本相同的特征值进行比对时才有意义，如果回传特征值请将该字段也回传
+				"Name": "Mike",
+				"Country": "China",
+				"Nation": "Han",
+				"NativePlace": "Guangdong,Zhuhai",
+				"IdCode": "415025199203050916",
+				"Job": "Software",
+				"Phone": "12345678902",
+				"Email": "abcd@163.com",
+				"Domicile": "Guangdong,Zhuhai,Xiangzhou ...",
+				"Remark": "Detail of this person ..."
+			},
+			{
+				"Id": -1,
+				"GrpId": 1,
+				"Time": 0,
+				"Similarity": 0,
+				"Sex": 0,
+				"Age": 26,
+				"Chn": 0,
+				"ModifyCnt": 0,	
+				"Image1": "base64(imgData)",	
+				"Image2": null,
+				"Image3": null,
+				"Feature": "base64(feature)",
+				"FtVersion": 0			// 特征值版本，只有版本相同的特征值进行比对时才有意义，如果回传特征值请将该字段也回传
+				"Name": "Mike1",
+				"Country": "China",
+				"Nation": "Han",
+				"NativePlace": "Guangdong,Zhuhai",
+				"IdCode": "415025199203050919",
+				"Job": "Software",
+				"Phone": "12345678902",
+				"Email": "abcd@163.com",
+				"Domicile": "Guangdong,Zhuhai,Xiangzhou ...",
+				"Remark": "Detail of this person ..."
+			}
+		]
+	}
+}
+回应消息格式：
+{
+	"msgType": "AI_addFaces",
+	"data": {
+		"MsgId": null,
+		"Count": 2,
+		"Result": [0, 0],		// 结果，见 AI_OPT_RESULT_TYPE 枚举
+		"Id": [2, 3]			// 添加成功后对应的人脸Id
+	}
+}
+
+6. 修改人脸信息，修改时的请求信息与添加时类似，但Id字段必须有效，"msgType"字段为"AI_modifyFaces"，如果给定"Image1"和"Feature"，
+   则直接使用给定的"Image1"和"Feature"（注意特征值版本也需改定），若只给定"Image1"则会重新计算"Feature"，如果不给定"Image1"则
+   只修改除"Image1"和"Feature"以外的字段。回应消息格式也与添加操作类似，只是"msgType"字段为"AI_modifyFaces"。
+
+
+7. 删除人脸信息，删除人脸信息时只需给定"Id"字段即可，消息格式如下：
+{
+	"msgType": "AI_deleteFaces",
+	"data": {
+		"MsgId": null,
+		"Count": 2,
+		"FaceInfo": [
+			{
+				"Id": 2,		// 64位有符号人脸Id，唯一标识
+				"GrpId": 0,		
+				"Time": 0,
+				"Similarity": 0,
+				"Sex": 0,		
+				"Age": 0,
+				"Chn": 0,
+				"ModifyCnt": 0,	
+				"Image1": null,	
+				"Image2": null,
+				"Image3": null,
+				"Feature": null,
+				"Name": "",
+				"Country": "",
+				"Nation": "",
+				"NativePlace": "",
+				"IdCode": "",
+				"Job": "",
+				"Phone": "",
+				"Email": "",
+				"Domicile": "",
+				"Remark": ""
+			},
+			{
+				"Id": 3,
+				"GrpId": 0,
+				"Time": 0,
+				"Similarity": 0,
+				"Sex": 0,
+				"Age": 0,
+				"Chn": 0,
+				"ModifyCnt": 0,	
+				"Image1": null,	
+				"Image2": null,
+				"Image3": null,
+				"Feature": null,
+				"Name": "",
+				"Country": "",
+				"Nation": "",
+				"NativePlace": "",
+				"IdCode": "",
+				"Job": "",
+				"Phone": "",
+				"Email": "",
+				"Domicile": "",
+				"Remark": ""
+			}
+		]
+	}
+}
+回应消息格式与添加、修改一致，只是"msgType"字段为"AI_deleteFaces"。
+
+
+8. 修改人脸所属的组，请求格式如下：
+{
+	"msgType": "AI_changeFacesGroup",
+	"data": {
+		"MsgId": null,
+		"Group": 2,				// 将要移到的人脸组Id
+		"Count": 2,
+		"FaceInfo": [
+			{
+				"Id": 2,		// 64位有符号人脸Id，唯一标识
+				"GrpId": 0,		
+				"Time": 0,
+				"Similarity": 0,
+				"Sex": 0,		
+				"Age": 0,
+				"Chn": 0,
+				"ModifyCnt": 0,	
+				"Image1": null,	
+				"Image2": null,
+				"Image3": null,
+				"Feature": null,
+				"FtVersion": 0	
+				"Name": "",
+				"Country": "",
+				"Nation": "",
+				"NativePlace": "",
+				"IdCode": "",
+				"Job": "",
+				"Phone": "",
+				"Email": "",
+				"Domicile": "",
+				"Remark": ""
+			},
+			{
+				"Id": 3,
+				"GrpId": 0,
+				"Time": 0,
+				"Similarity": 0,
+				"Sex": 0,
+				"Age": 0,
+				"Chn": 0,
+				"ModifyCnt": 0,	
+				"Image1": null,	
+				"Image2": null,
+				"Image3": null,
+				"Feature": null,
+				"FtVersion": 0
+				"Name": "",
+				"Country": "",
+				"Nation": "",
+				"NativePlace": "",
+				"IdCode": "",
+				"Job": "",
+				"Phone": "",
+				"Email": "",
+				"Domicile": "",
+				"Remark": ""
+			}
+		]
+	}
+}
+回应消息格式与添加、修改一致，只是"msgType"字段为"AI_changeFacesGroup"。
+
+
+9. 数据库人脸查询。
+（1）搜索，为了今后扩展方便和实现方便，查询时要求给定整个人脸信息，字段可全部留空（默认值），一般指定"GrpId"字段查询某个
+	组中的所有人，给定其他字段（图片、特征值除外）时则进行条件搜索或模糊匹配。
+搜索请求格式如下：
+{
+	"msgType": "AI_searchAddedFaces",
+	"data": {
+		"MsgId": null,
+		"FaceInfo": [
+			{
+				"Id": -1,
+				"GrpId": 1,		
+				"Time": 0,
+				"Similarity": 0,
+				"Sex": 0,		
+				"Age": 0,
+				"Chn": 0,
+				"ModifyCnt": 0,	
+				"Image1": null,	
+				"Image2": null,
+				"Image3": null,
+				"Feature": null,
+				"Name": "",
+				"Country": "",
+				"Nation": "",
+				"NativePlace": "",
+				"IdCode": "",
+				"Job": "",
+				"Phone": "",
+				"Email": "",
+				"Domicile": "",
+				"Remark": ""
+			}
+		]
+	}
+}
+回应消息格式：
+{
+	"msgType": "AI_searchAddedFaces",
+	"data": {
+		"MsgId": null,
+		"Result": 0,		// 结果，见 AI_OPT_RESULT_TYPE 枚举
+		"Count": 153		// 查询到的人脸总数
+	}
+}
+
+（2）分页获取人脸信息，请求格式如下：
+{
+	"msgType": "AI_getAddedFaces",
+	"data": {
+		"MsgId": null,
+		"StartIndex": 0,	// 请求的起始索引，例如，第一次：0-19，第二次：20-39，则StartIndex分别为0、 20
+		"Count": 20,		// 请求的人脸信息个数
+		"SimpleInfo": 0,	// 获取简略信息，回应消息中的每个人脸信息只包含Id、GrpId和Name字段，1-简略模式，0-正常模式
+		"WithImage": 1,		// 是否需要图片，1-需要，0-不需要
+		"WithFeature": 1	// 是否需要特征值，1-需要，0-不需要
+	}
+}
+回应消息格式：
+如果回应的实际人脸个数比请求的少，则表明总数已变，没有更多的人脸信息了。
+{
+	"msgType": "AI_getAddedFaces",
+	"data": {
+		"MsgId": null,
+		"Result": 0,		// 结果，见 AI_OPT_RESULT_TYPE 枚举
+		"Count": 20,
+		"FaceInfo": [
+			{
+				"Id": 1,		
+				"GrpId": 1,		
+				"Time": 0,
+				"Similarity": 0,
+				"Sex": 0,
+				"Age": 26,
+				"Chn": 0,
+				"ModifyCnt": 0,	
+				"Image1": "base64(imgData)",	
+				"Image2": null,
+				"Image3": null,
+				"Feature": "base64(feature)",
+				"FtVersion": 0			// 特征值版本，只有版本相同的特征值进行比对时才有意义，如果回传特征值请将该字段也回传
+				"Name": "Mike",
+				"Country": "China",
+				"Nation": "Han",
+				"NativePlace": "Guangdong,Zhuhai",
+				"IdCode": "415025199203050916",
+				"Job": "Software",
+				"Phone": "12345678902",
+				"Email": "abcd@163.com",
+				"Domicile": "Guangdong,Zhuhai,Xiangzhou ...",
+				"Remark": "Detail of this person ..."
+			},
+			{
+				"Id": 2,
+				"GrpId": 1,
+				"Time": 0,
+				"Similarity": 0,
+				"Sex": 0,
+				"Age": 26,
+				"Chn": 0,
+				"ModifyCnt": 0,	
+				"Image1": "base64(imgData)",	
+				"Image2": null,
+				"Image3": null,
+				"Feature": "base64(feature)",
+				"FtVersion": 0			// 特征值版本，只有版本相同的特征值进行比对时才有意义，如果回传特征值请将该字段也回传
+				"Name": "Mike1",
+				"Country": "China",
+				"Nation": "Han",
+				"NativePlace": "Guangdong,Zhuhai",
+				"IdCode": "415025199203050919",
+				"Job": "Software",
+				"Phone": "12345678902",
+				"Email": "abcd@163.com",
+				"Domicile": "Guangdong,Zhuhai,Xiangzhou ...",
+				"Remark": "Detail of this person ..."
+			},
+			{
+				...
+			},
+			...
+		]
+	}
+}
+
+
+10. 根据人脸Id直接获取人脸信息（无需搜索），请求格式如下：
+{
+	"msgType": "AI_getAddedFacesById",
+	"data": {
+		"MsgId": null,
+		"FacesId": [1, 5, 6, 20, 53, 25],		// 需要请求的人脸Id 列表
+		"SimpleInfo": 0	// 获取简略信息，回应消息中的每个人脸信息只包含Id、GrpId和Name字段，1-简略模式，0-正常模式
+		"WithImage": 1,		// 是否需要图片，1-需要，0-不需要
+		"WithFeature": 1	// 是否需要特征值，1-需要，0-不需要
+	}
+}
+回应消息格式：
+{
+	"msgType": "AI_getAddedFacesById",
+	"data": {
+		"MsgId": null,
+		"Result": 0,		// 结果，见 AI_OPT_RESULT_TYPE 枚举
+		"Count": 1,
+		"FaceInfo": [
+			{
+				"Id": 1,	
+				"GrpId": 1,		
+				"Time": 0,
+				"Similarity": 0,
+				"Sex": 0,		
+				"Age": 26,
+				"Chn": 0,
+				"ModifyCnt": 0,	
+				"Image1": "base64(imgData)",	
+				"Image2": null,
+				"Image3": null,
+				"Feature": "base64(feature)",
+				"FtVersion": 0			// 特征值版本，只有版本相同的特征值进行比对时才有意义，如果回传特征值请将该字段也回传
+				"Name": "Mike",
+				"Country": "China",
+				"Nation": "Han",
+				"NativePlace": "Guangdong,Zhuhai",
+				"IdCode": "415025199203050916",
+				"Job": "Software",
+				"Phone": "12345678902",
+				"Email": "abcd@163.com",
+				"Domicile": "Guangdong,Zhuhai,Xiangzhou ...",
+				"Remark": "Detail of this person ..."
+			}
+		]
+	}
+}
+
+
+11. 给人脸信息添加附加人脸，必须给定"FaceId"和"Image"字段，请求格式如下：
+{
+	"msgType": "AI_addExtraFaces",
+	"data": {
+		"MsgId": null,
+		"Count": 2,
+		"ExtFaceInfo": [
+			{
+				"Id": -1,	
+				"FaceId": 1,		
+				"Image": "base64(imgData)",	
+				"Feature": "base64(feature)",
+				"FtVersion": 0			// 特征值版本，只有版本相同的特征值进行比对时才有意义，如果回传特征值请将该字段也回传
+			},
+			{
+				"Id": -1,	
+				"FaceId": 1,		
+				"Image": "base64(imgData)",	
+				"Feature": "base64(feature)",
+				"FtVersion": 0			// 特征值版本，只有版本相同的特征值进行比对时才有意义，如果回传特征值请将该字段也回传
+			}
+		]
+	}
+}
+回应消息格式（与人脸添加回应消息类似）：
+{
+	"msgType": "AI_addExtraFaces",
+	"data": {
+		"MsgId": null,
+		"Count": 2,
+		"Result": [0, 0],		// 结果，见 AI_OPT_RESULT_TYPE 枚举
+		"Id": [1, 2]			// 添加成功后对应的人脸Id
+	}
+}
+
+
+12. 删除附加人脸，只需给定"Id"字段，其他字段使用默认值即可，请求格式如下：
+{
+	"msgType": "AI_deleteExtraFaces",
+	"data": {
+		"MsgId": null,
+		"Count": 2,
+		"ExtFaceInfo": [
+			{
+				"Id": 1,	
+				"FaceId": 0,		
+				"Image": null,	
+				"Feature": null,
+				"FtVersion": 0			// 特征值版本，只有版本相同的特征值进行比对时才有意义，如果回传特征值请将该字段也回传
+			},
+			{
+				"Id": 2,	
+				"FaceId": 0,		
+				"Image": null,	
+				"Feature": null,
+				"FtVersion": 0			// 特征值版本，只有版本相同的特征值进行比对时才有意义，如果回传特征值请将该字段也回传
+			}
+		]
+	}
+}
+回应消息格式与添加一致，只是"msgType"字段为"AI_deleteExtraFaces"。
+
+
+12. 获取附加人脸，由于附加人脸比较少，可一次获取完成，因此不再提供分步获取接口，直接返回附加人脸列表，
+请求格式如下：
+{
+	"msgType": "AI_getExtraFaces",
+	"data": {
+		"MsgId": null,
+		"FaceId": 1,		// 需要请求附加人脸的人脸Id，注意是附加人脸所属的人脸Id
+		"WithImage": 1,		// 是否需要图片，1-需要，0-不需要
+		"WithFeature": 1	// 是否需要特征值，1-需要，0-不需要
+	}
+}
+回应消息格式：
+{
+	"msgType": "AI_getExtraFaces",
+	"data": {
+		"MsgId": null,
+		"Result": 0,		// 结果，见 AI_OPT_RESULT_TYPE 枚举
+		"Count": 3,
+		"ExtFaceInfo": [
+			{
+				"Id": 1,	
+				"FaceId": 1,		
+				"Image": "base64(imgData)",	
+				"Feature": "base64(feature)",
+				"FtVersion": 0			// 特征值版本，只有版本相同的特征值进行比对时才有意义，如果回传特征值请将该字段也回传
+			},
+			{
+				"Id": 2,	
+				"FaceId": 1,		
+				"Image": "base64(imgData)",	
+				"Feature": "base64(feature)",
+				"FtVersion": 0			// 特征值版本，只有版本相同的特征值进行比对时才有意义，如果回传特征值请将该字段也回传
+			},
+			{
+				"Id": 3,	
+				"FaceId": 1,		
+				"Image": "base64(imgData)",	
+				"Feature": "base64(feature)",
+				"FtVersion": 0			// 特征值版本，只有版本相同的特征值进行比对时才有意义，如果回传特征值请将该字段也回传
+			}
+		]
+	}
+}
+
+
+13. 根据附加人脸Id获取附加人脸信息，请求格式如下：
+{
+	"msgType": "AI_getExtraFaceById",
+	"data": {
+		"MsgId": null,
+		"Id": 1,			// 需要请求的附加人脸的Id，注意，不是其所属的人脸Id
+		"WithImage": 1,		// 是否需要图片，1-需要，0-不需要
+		"WithFeature": 1	// 是否需要特征值，1-需要，0-不需要
+	}
+}
+回应消息格式：
+{
+	"msgType": "AI_getExtraFaceById",
+	"data": {
+		"MsgId": null,
+		"Result": 0,		// 结果，见 AI_OPT_RESULT_TYPE 枚举
+		"Count": 1,
+		"ExtFaceInfo": [
+			{
+				"Id": 1,	
+				"FaceId": 1,		
+				"Image": "base64(imgData)",	
+				"Feature": "base64(feature)",
+				"FtVersion": 0			// 特征值版本，只有版本相同的特征值进行比对时才有意义，如果回传特征值请将该字段也回传
+			}
+		]
+	}
+}
+
+
+14. 抓拍人脸搜索、匹配统一接口，匹配时只需给定人脸"Id"和"Feature"，其他使用默认值即可，如果给定要匹配
+	的人脸数为0，则转换为搜索抓拍人脸，不进行比对，
+json格式如下：
+{
+	"msgType": "AI_searchSnapedFaces",
+	"data": {
+		"MsgId": null,
+		"StartTime": "2018-10-20 00:00:00",
+		"EndTime": "2018-10-28 23:59:59",
+		"Chn": [0, 1, 2, 3, 4, 5, 6, 7, 8],   // 要搜索的通道，数值代表通道
+		"AlarmGroup": [1, 2, 5, 9, 13],       // 需要显示的人脸实时抓拍时所属的组，数值代表所选组的组Id，为空则显示所有（包括已删除
+											     的组），给定组则结果会按给定组Id进行过滤。
+		"Similarity": 70,		// 匹配时的相似度，低于该相似度的人脸将会被滤除[0, 100]为正常取值区间，如果不匹配人脸，该参数给-1即可
+		"WithRecord": 1, // 是否要求对应有录像，因为人脸抓拍时可能设备没有录像，此时是无法回放人脸图片对应的录像的，要求有录像时没有
+						    对应录像的人脸将会被滤除。
+		"Engine": 0,	 // 考虑到搜索过程和操作逻辑有叠加的情况（例如在匹配页面搜索出结果后又可以再打开人脸选择对话框添加新的人脸，
+							此时匹配的缓存信息将会被新一次搜索的结果覆盖而失效），设备端为此提供了两个功能对等的搜索引擎（0和1），两个
+							引擎的数据及缓存完全独立，互不干扰，如何分工由客户端自行分配，例如可以使用0号引擎实现一些临时的人脸选择任
+							务（供选择对话框使用），使用1号引擎的数据显示搜索或者匹配的结果。
+		"Count": 2,
+		"FaceInfo": [
+			{
+				"Id": 2,
+				"GrpId": 1,		
+				"Time": 0,
+				"Similarity": 0,
+				"Sex": 0,		
+				"Age": 0,
+				"Chn": 0,
+				"ModifyCnt": 0,	
+				"Image1": null,	
+				"Image2": null,
+				"Image3": null,
+				"Feature": "base64(feature)",
+				"FtVersion": 0			// 特征值版本，只有版本相同的特征值进行比对时才有意义，如果回传特征值请将该字段也回传
+				"Name": "",
+				"Country": "",
+				"Nation": "",
+				"NativePlace": "",
+				"IdCode": "",
+				"Job": "",
+				"Phone": "",
+				"Email": "",
+				"Domicile": "",
+				"Remark": ""
+			},
+			{
+				"Id": 5,	
+				"GrpId": 2,		
+				"Time": 0,
+				"Similarity": 0,
+				"Sex": 0,		
+				"Age": 0,
+				"Chn": 0,
+				"Image1": null,	
+				"Image2": null,
+				"Image3": null,
+				"Feature": "base64(feature)",
+				"FtVersion": 0			// 特征值版本，只有版本相同的特征值进行比对时才有意义，如果回传特征值请将该字段也回传
+				"Name": "",
+				"Country": "",
+				"Nation": "",
+				"NativePlace": "",
+				"IdCode": "",
+				"Job": "",
+				"Phone": "",
+				"Email": "",
+				"Domicile": "",
+				"Remark": ""
+			}
+		]
+	}
+}
+回应消息格式：
+{
+	"msgType": "AI_searchSnapedFaces",
+	"data": {
+		"MsgId": null,
+		"Result": 0,	// 结果，见 AI_OPT_RESULT_TYPE 枚举
+		"Count": 600     // 返回值代表图片实际张数
+	}
+}
+
+匹配进度消息格式：
+{
+  "msgType": "AI_matchProgress",
+  "data": {
+		"MsgId": null,
+		"TotalCount": 60000,
+		"ComparedCount": 1500
+  }
+}
+
+
+15. 分页获取搜索或匹配的结果，在上述接口调用后就可以获取结果了，请求格式如下：
+{
+	"msgType": "AI_getSnapedFaces",
+	"data": {
+		"MsgId": null,
+		"Engine": 0,		// 使用哪一个搜索引擎，0或者1，和搜索接口配合使用
+		"MatchedFaces": 1,	// 获取匹配的人脸还是抓拍人脸，1-获取匹配的人脸，0-获取抓拍的人脸
+		"StartIndex": 0,	// 请求的起始索引，例如，第一次：0-19，第二次：20-39，则StartIndex分别为0、 20
+		"Count": 20,		// 请求的人脸信息个数
+		"SimpleInfo": 1		// 获取简略信息还是完整信息，简略信息只包含最多只包含MatchedId、Similarity、UUId，
+							   如果没有匹配到人脸则只包含UUId
+		"WithFaceImage": 1,	// 是否需要人脸图片，1-需要，0-不需要
+		"WithBodyImage": 0, // 是否需要人体图片，1-需要，0-不需要
+		"WithBackgroud": 0,	// 是否需要背景图片，1-需要，0-不需要
+		"WithFeature": 1	// 是否需要特征值，1-需要，0-不需要
+	}
+}
+回应消息数据格式：
+{
+	"msgType": "AI_getSnapedFaces",
+	"data": {
+		"MsgId": null,
+		"Result": 0,	   // 结果，见 AI_OPT_RESULT_TYPE 枚举
+		"TotalCount": 600,  // 搜索到或者匹配成功的人脸总数
+		"Count": 20,	   // 本次回应的抓拍人脸总数
+		"SnapedFaceInfo": [
+			{
+				"UUId": 103,			// 该抓拍人脸信息的唯一Id，后续可直接使用该标识获取该人脸的详细信息
+				"MatchedFaceId": 5,		// 匹配的人脸Id，如果没有匹配则无该字段
+				"Chn": 3,
+				"Similarity": 89.39759,	// 与匹配上的人脸的相似度，如果没有匹配则无该字段
+				"StartTime": 1540444116, // 2018-10-25 13:08:36， Unix时间戳
+				"EndTime": 1540444136, 	 // 2018-10-25 13:08:56， Unix时间戳
+				"FaceImage": "base64(imgData)",	
+				"BodyImage": "base64(imgData)",	
+				"Background": "base64(imgData)",	
+				"Feature": "base64(feature)",
+				"FtVersion": 0			// 特征值版本，只有版本相同的特征值进行比对时才有意义，如果回传特征值请将该字段也回传
+				"SnapId": 2375,
+				"Score": 60
+			},
+			{
+				"UUId": 126,			// 该抓拍人脸信息的唯一Id，后续可直接使用该标识获取该人脸的详细信息
+				"MatchedFaceId": 2,		// 匹配的人脸Id，如果没有匹配则无该字段
+				"Chn": 3,
+				"Similarity": 96.87693,	// 与匹配上的人脸的相似度，如果没有匹配则无该字段
+				"StartTime": 1540444116, // 2018-10-25 13:08:36， Unix时间戳
+				"EndTime": 1540444136, 	 // 2018-10-25 13:08:56， Unix时间戳
+				"FaceImage": "base64(imgData)",	
+				"BodyImage": "base64(imgData)",	
+				"Background": "base64(imgData)",	
+				"Feature": "base64(feature)",
+				"FtVersion": 0			// 特征值版本，只有版本相同的特征值进行比对时才有意义，如果回传特征值请将该字段也回传
+				"SnapId": 2376,
+				"Score": 60
+			},
+			{
+				...
+			},
+			...
+		]
+	}
+}
+
+16. 根据UUId直接获取抓拍人脸相关信息，无需再次搜索，请求格式如下：
+{
+	"msgType": "AI_getSnapedFacesById",
+	"data": {
+		"MsgId": null,
+		"Engine": 0,					// 使用哪一个搜索引擎，0或者1，可任选，但最好和搜索接口保持一致
+		"UUIds": [103, 105, 190, 129],	// 要获取的抓拍信息的唯一标识
+		"WithFaceImage": 1,	// 是否需要人脸图片，1-需要，0-不需要
+		"WithBodyImage": 0, // 是否需要人体图片，1-需要，0-不需要
+		"WithBackgroud": 0,	// 是否需要背景图片，1-需要，0-不需要
+		"WithFeature": 1	// 是否需要特征值，1-需要，0-不需要
+	}
+}
+回应消息数据格式：
+{
+	"msgType": "AI_getSnapedFacesById",
+	"data": {
+		"MsgId": null,
+		"Result": 0,	   // 结果，见 AI_OPT_RESULT_TYPE 枚举
+		"Count": 20,	   // 本次回应的抓拍人脸总数
+		"SnapedFaceInfo": [
+			{
+				"UUId": 103,
+				"Chn": 3,
+				"StartTime": 1540444116, // 2018-10-25 13:08:36， Unix时间戳
+				"EndTime": 1540444136, 	 // 2018-10-25 13:08:56， Unix时间戳
+				"FaceImage": "base64(imgData)",	
+				"BodyImage": "base64(imgData)",	
+				"Background": "base64(imgData)",	
+				"Feature": "base64(feature)",
+				"FtVersion": 0			// 特征值版本，只有版本相同的特征值进行比对时才有意义，如果回传特征值请将该字段也回传
+				"SnapId": 2375,
+				"Score": 60
+			},
+			{
+				"UUId": 126,	
+				"Chn": 3,
+				"StartTime": 1540444116, // 2018-10-25 13:08:36， Unix时间戳
+				"EndTime": 1540444136, 	 // 2018-10-25 13:08:56， Unix时间戳
+				"FaceImage": "base64(imgData)",	
+				"BodyImage": "base64(imgData)",	
+				"Background": "base64(imgData)",	
+				"Feature": "base64(feature)",
+				"FtVersion": 0			// 特征值版本，只有版本相同的特征值进行比对时才有意义，如果回传特征值请将该字段也回传
+				"SnapId": 2376,
+				"Score": 60
+			},
+			{
+				...
+			},
+			...
+		]
+	}
+}
+
+
+17. 停止抓拍人脸搜索，当客户端确定不需要搜索结果后可给设备发送停止搜索命令，设备端将释放给定搜索引擎的所有缓存，减轻设备
+	的压力，例如人脸选择对话框关闭或者比对界面关闭时就可以给设备发送该请求，请求格式如下：
+{
+	"msgType": "AI_stopSearchSnapedFaces",
+	"data": {
+		"MsgId": null,
+		"Engine": [0, 1]		// 要释放缓存的引擎列表
+	}
+}
+回应消息格式：
+{
+	"msgType": "AI_stopSearchSnapedFaces",
+	"data": {
+		"MsgId": null,
+		"Result": 0
+	}
+}
+
+18. 添加比对人脸，从硬盘搜索出的人脸或者从U盘、电脑本地选择的人脸照片需要先进行添加之后才可用于比对，这些人脸将会被添加到
+	常用列表中，可供后续直接使用，请求的消息格式和添加普通人脸类似，只是不用提供"GrpId"字段，另外，这些人脸只有用于比对，
+	其他字段信息不重要，因此也不需要提供值，只需给定图片（有特征值给定特征值）即可，请求的数据格式如下：
+{
+	"msgType": "AI_addCompareFaces",
+	"data": {
+		"MsgId": null,
+		"Count": 2,
+		"WithImage": 0,		// 是否需要图片，1-需要，0-不需要
+		"WithFeature": 1	// 是否需要特征值，1-需要，0-不需要
+		"FaceInfo": [
+			{
+				"Id": -1,
+				"GrpId": 0,	
+				"Time": 0,
+				"Similarity": 0,
+				"Sex": 0,
+				"Age": 0,
+				"Chn": 0,
+				"ModifyCnt": 0,	
+				"Image1": "base64(imgData)",	
+				"Image2": null,
+				"Image3": null,
+				"Feature": "base64(feature)",
+				"FtVersion": 0			// 特征值版本，只有版本相同的特征值进行比对时才有意义，如果回传特征值请将该字段也回传
+				"Name": "",
+				"Country": "",
+				"Nation": "",
+				"NativePlace": "",
+				"IdCode": "",
+				"Job": "",
+				"Phone": "",
+				"Email": "",
+				"Domicile": "",
+				"Remark": ""
+			},
+			{
+				"Id": -1,
+				"GrpId": 0,	
+				"Time": 0,
+				"Similarity": 0,
+				"Sex": 0,
+				"Age": 0,
+				"Chn": 0,
+				"ModifyCnt": 0,	
+				"Image1": "base64(imgData)",	
+				"Image2": null,
+				"Image3": null,
+				"Feature": null,
+				"FtVersion": 0			// 特征值版本，只有版本相同的特征值进行比对时才有意义，如果回传特征值请将该字段也回传
+				"Name": "",
+				"Country": "",
+				"Nation": "",
+				"NativePlace": "",
+				"IdCode": "",
+				"Job": "",
+				"Phone": "",
+				"Email": "",
+				"Domicile": "",
+				"Remark": ""
+			}
+		]
+	}
+}
+回应时，如果添加成功，人脸的所有信息均会回应（重要信息有Id、GrpId、Image1、Feature）消息格式如下：
+{
+	"msgType": "AI_addCompareFaces",
+	"data": {
+		"MsgId": null,
+		"Result": [0, -3],	   // 每个人脸添加的结果，见 AI_OPT_RESULT_TYPE 枚举
+		"Count": 3,
+		"FaceInfo": [
+			{
+				"Id": 5,
+				"GrpId": 0,	
+				"Time": 0,
+				"Similarity": 0,
+				"Sex": 0,
+				"Age": 0,
+				"Chn": 0,
+				"ModifyCnt": 0,	
+				"Image1": "base64(imgData)",	
+				"Image2": null,
+				"Image3": null,
+				"Feature": "base64(feature)",
+				"FtVersion": 0			// 特征值版本，只有版本相同的特征值进行比对时才有意义，如果回传特征值请将该字段也回传
+				"Name": "",
+				"Country": "",
+				"Nation": "",
+				"NativePlace": "",
+				"IdCode": "",
+				"Job": "",
+				"Phone": "",
+				"Email": "",
+				"Domicile": "",
+				"Remark": ""
+			},
+			{
+				"Id": -1,
+				"GrpId": 0,	
+				"Time": 0,
+				"Similarity": 0,
+				"Sex": 0,
+				"Age": 0,
+				"Chn": 0,
+				"ModifyCnt": 0,	
+				"Image1": null,	
+				"Image2": null,
+				"Image3": null,
+				"Feature": null,
+				"FtVersion": 0			// 特征值版本，只有版本相同的特征值进行比对时才有意义，如果回传特征值请将该字段也回传
+				"Name": "",
+				"Country": "",
+				"Nation": "",
+				"NativePlace": "",
+				"IdCode": "",
+				"Job": "",
+				"Phone": "",
+				"Email": "",
+				"Domicile": "",
+				"Remark": ""
+			}
+		]
+	}
+}
+如果人脸添加失败，则相关人脸信息无效，Image1和Feature的长度均为0。
+
+
+19. 抓拍对象（包括人、车等）的搜索
+enum AICamPicType {
+    ACPT_Face = 0,
+    ACPT_HumanBody = 1,
+    ACPT_Vehicle = 2
+};
+
+json格式如下：
+{
+	"msgType": "AI_searchSnapedObjects",
+	"data": {
+		"MsgId": null,
+		"StartTime": "2018-10-20 00:00:00",
+		"EndTime": "2018-10-28 23:59:59",
+		"Chn": [0, 1, 2, 3, 4, 5, 6, 7, 8],   // 要搜索的通道，数值代表通道
+		"Type": [1, 2],       				  // 要搜索的类型，例如人形、车等，见 AICamPicType 枚举。
+		"Engine": 0,
+	}
+}
+
+回应消息格式：
+{
+	"msgType": "AI_searchSnapedObjects",
+	"data": {
+		"MsgId": null,
+		"Result": 0,	// 结果，见 AI_OPT_RESULT_TYPE 枚举
+		"Count": 600     // 返回值代表对象的实际个数
+	}
+}
+
+20. 分页获取搜索或匹配的结果，在上述接口调用后就可以获取结果了，请求格式如下：
+{
+	"msgType": "AI_getSnapedObjects",
+	"data": {
+		"MsgId": null,
+		"Engine": 0,		// 使用哪一个搜索引擎，0或者1，和搜索接口配合使用
+		"StartIndex": 0,	// 请求的起始索引，例如，第一次：0-19，第二次：20-39，则StartIndex分别为0、 20
+		"Count": 20,		// 请求的人脸信息个数
+		"SimpleInfo": 1		// 获取简略信息还是完整信息，简略信息只包含 UUId
+		"WithObjectImage": 0, // 是否需要对象的图片（如行人、车），1-需要，0-不需要
+		"WithBackgroud": 0	// 是否需要背景图片，1-需要，0-不需要
+	}
+}
+回应消息数据格式：
+{
+	"msgType": "AI_getSnapedObjects",
+	"data": {
+		"MsgId": null,
+		"Result": 0,	   // 结果，见 AI_OPT_RESULT_TYPE 枚举
+		"TotalCount": 600,  // 搜索到的对象总数
+		"Count": 20,	   // 本次回应的对象总数
+		"SnapedObjInfo": [
+			{
+				"UUId": 103,			// 该抓拍对象信息的唯一Id，后续可直接使用该标识获取该对象的详细信息
+				"Chn": 3,
+				"StartTime": 1540444116, // 2018-10-25 13:08:36， Unix时间戳（显示时统一按UTC时区来显示）
+				"EndTime": 1540444137, 	 // 2018-10-25 13:08:56， Unix时间戳（显示时统一按UTC时区来显示）
+				"ObjectImage": "base64(imgData)",	
+				"Background": "base64(imgData)",	
+				"SnapId": 2375,
+				"Type": 1				// 该抓拍对象的类型（如行人、车，见 AICamPicType 枚举）
+			},
+			{
+				"UUId": 105,			// 该抓拍对象信息的唯一Id，后续可直接使用该标识获取该对象的详细信息
+				"Chn": 6,
+				"StartTime": 1540444116, // 2018-10-25 13:08:36， Unix时间戳（显示时统一按UTC时区来显示）
+				"EndTime": 1540444139, 	 // 2018-10-25 13:08:56， Unix时间戳（显示时统一按UTC时区来显示）
+				"ObjectImage": "base64(imgData)",	
+				"Background": "base64(imgData)",	
+				"SnapId": 2375,
+				"Type": 2				// 该抓拍对象的类型（如行人、车，见 AICamPicType 枚举）
+			},
+			{
+				...
+			},
+			...
+		]
+	}
+}
+
+21. 根据UUId直接获取抓拍人脸相关信息，无需再次搜索，请求格式如下：
+{
+	"msgType": "AI_getSnapedObjectsById",
+	"data": {
+		"MsgId": null,
+		"Engine": 0,					// 使用哪一个搜索引擎，0或者1，可任选，但最好和搜索接口保持一致
+		"UUIds": [103, 105, 190, 129],	// 要获取的抓拍信息的唯一标识
+		"WithObjectImage": 1, // 是否需要对象的图片（如行人、车），1-需要，0-不需要
+		"WithBackgroud": 1	// 是否需要背景图片，1-需要，0-不需要
+	}
+}
+回应消息数据格式：
+{
+	"msgType": "AI_getSnapedObjectsById",
+	"data": {
+		"MsgId": null,
+		"Result": 0,	   // 结果，见 AI_OPT_RESULT_TYPE 枚举
+		"Count": 4,	   // 本次回应的抓拍对象总数
+		"SnapedObjInfo": [
+			{
+				"UUId": 103,			// 该抓拍对象信息的唯一Id，后续可直接使用该标识获取该对象的详细信息
+				"Chn": 3,
+				"StartTime": 1540444116, // 2018-10-25 13:08:36， Unix时间戳（显示时统一按UTC时区来显示）
+				"EndTime": 1540444137, 	 // 2018-10-25 13:08:56， Unix时间戳（显示时统一按UTC时区来显示）
+				"ObjectImage": "base64(imgData)",	
+				"Background": "base64(imgData)",	
+				"SnapId": 2375,
+				"Type": 1				// 该抓拍对象的类型（如行人、车，见 AICamPicType 枚举）
+			},
+			{
+				"UUId": 105,			// 该抓拍对象信息的唯一Id，后续可直接使用该标识获取该对象的详细信息
+				"Chn": 6,
+				"StartTime": 1540444116, // 2018-10-25 13:08:36， Unix时间戳（显示时统一按UTC时区来显示）
+				"EndTime": 1540444139, 	 // 2018-10-25 13:08:56， Unix时间戳（显示时统一按UTC时区来显示）
+				"ObjectImage": "base64(imgData)",	
+				"Background": "base64(imgData)",	
+				"SnapId": 2375,
+				"Type": 2				// 该抓拍对象的类型（如行人、车，见 AICamPicType 枚举）
+			},
+			{
+				...
+			},
+			...
+		]
+	}
+}
+
+22. 停止抓拍对象搜索，当客户端确定不需要搜索结果后可给设备发送停止搜索命令，设备端将释放给定搜索引擎的所有缓存，减轻设备
+	的压力，和停止搜索抓拍人脸类似，请求格式如下：
+{
+	"msgType": "AI_stopSearchSnapedObjects",
+	"data": {
+		"MsgId": null,
+		"Engine": [0, 1]		// 要释放缓存的引擎列表
+	}
+}
+回应消息格式：
+{
+	"msgType": "AI_stopSearchSnapedObjects",
+	"data": {
+		"MsgId": null,
+		"Result": 0
+	}
+}
+
+
+23. NVR通过IPC来计算特征值时，为了简化操作，不再使用上面的长链路透传，直接使用短链路透传，由于短链路采用的是阻塞请求的方式且
+	超时时间为5s，因此一次请求的特征值不能过多，现阶段一次发送一张图片，但协议上为了灵活，定义成支持同时发送多张。大致流程
+	是：NVR把需要计算特征值的图片通过 base64 进行转码，然后通过json按下面的格式(1)透传给IPC，IPC收到数据后通过base64把收到的
+	图片json数据逆转成二进制图片数据，然后调用深度学习人脸模块特征值计算接口计算出特征值，完成之后把特征值（用base64编码）和
+	结果按下面的格式(2)回应给NVR。
+ (1) NVR端特征值计算请求格式：
+	{
+		"msgType":"AI_getImagesFeature",
+		"data":{
+			"Images":[
+				base64(imgData1),
+				base64(imgData2),
+				base64(imgData3),
+				...
+			]
+		}
+	}
+	
+ (2) IPC特征值回应格式：
+	{
+		"msgType":"AI_getImagesFeature",
+		"data":{
+			"FeatureVersion": 1,			// 计算特征值的模型版本
+			"Results": [1, 2, 1 ...],		// 计算结果，见 enum FeatureCalcResultType
+			"Features":[					// 如果特征值计算失败（比如不是人脸，相关特征值成员字段给空字符串即可）
+				base64(feature1),
+				"",
+				base64(feature3),
+				...
+			]
+		}
+	}
+	
+	enum FeatureCalcResultType {
+		FCRT_CalcFailed = 0,		// 计算失败，由于系统错误导致的失败，比如人脸特征值模块故障等等
+		FCRT_Success = 1,			// 计算成功，特征值有效
+		FCRT_NoFeature = 2			// 功能执行成功，但是由于图片无法识别到人脸，无法提取特征值。
+	};
+	
+	
+24. 人脸统计信息搜索，人脸、人车统计信息搜索，用客户端显示人脸统计相关的信息，请求格式如下：
+{
+	"msgType": "AI_searchFaceStatistics",
+	"data": {
+		"MsgId": null,
+		"Engine": 0,							// 使用哪一个搜索引擎，0或者1，可任选
+		"StartTime": "2018-10-20 00:00:00",
+		"EndTime": "2018-10-28 23:59:59",
+		"Chn": [0, 1, 2, 3, 4, 5, 6, 7, 8],   	// 要搜索的通道，数值代表通道
+		"Group": [1, 2, 5, 9, 13]       		// 要搜索的组，数值代表所选组的组Id，为空则搜索所有（包括已删除的组）
+	}
+}
+
+回应消息格式：
+{
+	"msgType": "AI_searchFaceStatistics",
+	"data": {
+		"MsgId": null,
+		"Result": 0,	// 结果，见 AI_OPT_RESULT_TYPE 枚举
+		"Count": 160000     // 返回值代表人脸统计信息的实际条数
+	}
+}
+
+25. 获取人脸统计信息结果，请求格式如下：
+{
+	"msgType": "AI_getFaceStatistics",
+	"data": {
+		"MsgId": null,
+		"Engine": 0,		// 使用哪一个搜索引擎，0或者1，和搜索接口配合使用
+		"StartIndex": 0,	// 请求的起始索引，例如，第一次：0-9999，第二次：10000-19999，则StartIndex分别为0、 10000
+		"Count": 10000		// 请求的人脸统计信息的条数
+	}
+}
+
+回应消息格式：
+{
+	"msgType": "AI_getFaceStatistics",
+	"data": {
+		"MsgId": null,
+		"Result": 0,	   		// 结果，见 AI_OPT_RESULT_TYPE 枚举
+		"Count": 10000,	  		// 本次回应的对象总数
+		"Statistics": [
+			{
+				"Group": 1,			// 人脸所属的组ID
+				"Time": 1540444116, // 2018-10-25 13:08:36， Unix时间戳（显示时统一按UTC时区来显示）
+				"Chn": 3			// 人脸所属的通道
+			},
+			{
+				"Group": 3,			// 人脸所属的组ID
+				"Time": 1540444119, // 2018-10-25 13:08:39， Unix时间戳（显示时统一按UTC时区来显示）
+				"Chn": 1			// 人脸所属的通道
+			},
+			{
+				...
+			},
+			...
+		]
+	}
+}
+
+26. 获取人车统计结果，人车统计由于没有组的属性，因此搜索上采用直接通过时间段搜索概要，回应消息不再给出
+    每条统计的详细信息，请求格式如下：
+{
+	"msgType": "AI_getObjectStatistics",
+	"data": {
+		"MsgId": null,
+		"Engine": 0,							// 使用哪一个搜索引擎，0或者1，可任选
+		"TimePoints": [							// 搜索的时间区间，例如，示例给的是搜索2019.4.8所在星期的时间点，
+												// 搜索时依次使用前一个时间点作为起始时间、随后的一个时间作为结
+												// 束时间（不包含结束时间点）来作为搜索区间进行搜索，时间点的个数
+												// 没有限制，由搜索条件决定，例如按天搜索时间点个数则为25个。
+			"2019-04-08 00:00:00", 	// 周一						   
+			"2019-04-09 00:00:00", 	// 周二					   
+			"2019-04-10 00:00:00", 	// 周三						   
+			"2019-04-11 00:00:00", 	// 周四						   
+			"2019-04-12 00:00:00", 	// 周五						   
+			"2019-04-13 00:00:00", 	// 周六						   
+			"2019-04-14 00:00:00", 	// 周日						   
+			"2019-04-15 00:00:00", 	// 下周一，搜索结果不包含该时刻点					   
+			]
+		"Chn": [0, 1, 2, 3, 4, 5, 6, 7, 8],   	// 要搜索的通道，数值代表通道
+		"Type": [1, 2]       				  	// 要搜索的类型，例如人形、车等，见 AICamPicType 枚举。
+	}
+}
+
+回应消息格式：
+{
+	"msgType": "AI_getObjectStatistics",
+	"data": {
+		"MsgId": null,
+		"Result": 0,	   		// 结果，见 AI_OPT_RESULT_TYPE 枚举
+		"ObjectCount": [3650, 1230, 1980, 1002, 5000, 8900, 8897]  // 每个时间区间搜索到的数量
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+[1] 抓拍人脸实时上告，每次上告一个人脸，Image1为匹配的人脸图片，Image2为抓拍的人脸，Image3为人体图片，
+Image4为大图（抓拍人脸时的全图），Feature为抓拍人脸图片对应的特征值，如果没有匹配人脸，则Image1长度为0，
+数据buffer格式如下：
+RSFrameHead + json
+
+帧头RSFrameHead内容如下：
+RSFrameHead *pHd = (RSFrameHead *)buffer.data();
+memset(pHd, 0, sizeof(RSFrameHead);
+pHd->FrameNo = gAiFrameCnt++;
+pHd->FrameTag = RSFrameTag;
+pHd->FrameType = 'I';       // Face
+pHd->FrameSize = buffer.size() - sizeof(RSFrameHead);
+pHd->ReportHead.ReportType = SRT_AIFaceAlarm;
+
+json部分如下：
+{
+	"FaceInfo": [
+		{
+			"Id": 1,
+			"GrpId": 1,		
+			"SnapId": 1250,			// 前端IPC抓拍时图片的Id， 32位无符号整型
+			"StartTime": 1540444116,   	// 抓拍时间，2018-10-25 13:08:36， Unix时间戳
+			"EndTime": 1540444126,   	// 抓拍时间，2018-10-25 13:08:46， Unix时间戳
+			"Similarity": 93.56932,
+			"Score": 87				// 图片得分（置信度）
+			"Sex": 0,		
+			"Age": 26,
+			"Chn": 0,
+			"ModifyCnt": 0,	
+			"Image1": "base64(imgData)",	
+			"Image2": "base64(imgData)",
+			"Image3": "base64(imgData)",
+			"Image4": "base64(imgData)",
+			"Feature": "base64(feature)",
+			"Name": "Mike",
+			"Country": "China",
+			"Nation": "Han",
+			"NativePlace": "Guangdong,Zhuhai",
+			"IdCode": "415025199203050916",
+			"Job": "Software",
+			"Phone": "12345678902",
+			"Email": "abcd@163.com",
+			"Domicile": "Guangdong,Zhuhai,Xiangzhou ...",
+			"Remark": "Detail of this person ..."
+		}
+	]
+}
+匹配到人脸时上述信息为所匹配到的人脸的信息（特征值除外，特征值始终是抓拍人脸的特征值），未匹配到时除实时信息外，
+其余值均为默认值，如Id(-1), GrpId(-1), Image1(null)等等。
+
+
+[2] 抓拍对象（行人、车）报警实时上告，上告方式和人脸类似，帧头部分唯一不同的是上告类型：
+pHd->ReportHead.ReportType = SRT_AIObjectAlarm;
+
+json部分如下：
+{
+	"SnapedObjInfo": [
+		{
+			"Chn": 3,
+			"StartTime": 1540444116, // 2018-10-25 13:08:36， Unix时间戳（显示时统一按UTC时区来显示）
+			"EndTime": 1540444137, 	 // 2018-10-25 13:08:56， Unix时间戳（显示时统一按UTC时区来显示）
+			"ObjectImage": "base64(imgData)",	
+			"Background": "base64(imgData)",	
+			"SnapId": 2375,
+			"Type": 1				// 该抓拍对象的类型（如行人、车，见 AICamPicType 枚举）
+		}
+	}
+}
+
+
+

@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{10CB3859-7E79-4AC4-A59A-04E624DCC295}</ProjectGuid>
+    <RootNamespace>RSLibDemo</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>15.0.27428.2015</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)Bin/\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>RSLibDemo</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)Bin64/\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>RSLibDemo</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)Bin/\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <TargetName>RSLibDemo</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)Bin64/\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <TargetName>RSLibDemo</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalDependencies>uafxcwd.lib;LIBCMTD.lib;</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>LIBCMTD.lib;uafxcwd.lib</IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX64</TargetMachine>
+      <AdditionalDependencies>uafxcwd.lib;LIBCMTD.lib;</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>LIBCMTD.lib;uafxcwd.lib</IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalDependencies>uafxcw.lib;LIBCMT.lib;</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>LIBCMT.lib;uafxcw.lib</IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX64</TargetMachine>
+      <AdditionalDependencies>uafxcw.lib;LIBCMT.lib;</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>LIBCMT.lib;uafxcw.lib</IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\SDKWrapper\DeviceManager\authority_ability.h" />
+    <ClInclude Include="..\..\SDKWrapper\DeviceManager\capture_from_device.h" />
+    <ClInclude Include="..\..\SDKWrapper\DeviceManager\connection.h" />
+    <ClInclude Include="..\..\SDKWrapper\DeviceManager\convert_file_type.h" />
+    <ClInclude Include="..\..\SDKWrapper\DeviceManager\download_record.h" />
+    <ClInclude Include="..\..\SDKWrapper\DeviceManager\forward_define.h" />
+    <ClInclude Include="..\..\SDKWrapper\DeviceManager\human_face.h" />
+    <ClInclude Include="..\..\SDKWrapper\DeviceManager\local_playback.h" />
+    <ClInclude Include="..\..\SDKWrapper\DeviceManager\local_playback_thumbnails.h" />
+    <ClInclude Include="..\..\SDKWrapper\DeviceManager\log.h" />
+    <ClInclude Include="..\..\SDKWrapper\DeviceManager\md5.h" />
+    <ClInclude Include="..\..\SDKWrapper\DeviceManager\preview.h" />
+    <ClInclude Include="..\..\SDKWrapper\DeviceManager\ptz_control.h" />
+    <ClInclude Include="..\..\SDKWrapper\DeviceManager\remote_playback.h" />
+    <ClInclude Include="..\..\SDKWrapper\DeviceManager\remote_playback_thumbnails.h" />
+    <ClInclude Include="..\..\SDKWrapper\DeviceManager\RSDevice.h" />
+    <ClInclude Include="..\..\SDKWrapper\DeviceManager\search_modify.h" />
+    <ClInclude Include="..\..\SDKWrapper\DeviceManager\search_record.h" />
+    <ClInclude Include="..\..\SDKWrapper\DeviceManager\sync_playback.h" />
+    <ClInclude Include="..\..\SDKWrapper\DeviceManager\talk.h" />
+    <ClInclude Include="..\..\SDKWrapper\DeviceManager\upgrade.h" />
+    <ClInclude Include="..\..\SDKWrapper\Include\common_type.h" />
+    <ClInclude Include="..\..\SDKWrapper\Include\correction_type.h" />
+    <ClInclude Include="..\..\SDKWrapper\Include\RSNet.h" />
+    <ClInclude Include="..\..\SDKWrapper\Include\RSNetParameter.h" />
+    <ClInclude Include="..\..\SDKWrapper\Include\RSNetProtocol.h" />
+    <ClInclude Include="..\..\SDKWrapper\Include\RSPlay.h" />
+    <ClInclude Include="..\..\SDKWrapper\Include\RSSDKWrapper.h" />
+    <ClInclude Include="..\..\SDKWrapper\Include\RSTypedef.h" />
+    <ClInclude Include="..\..\SDKWrapper\JsonCpp\json-forwards.h" />
+    <ClInclude Include="..\..\SDKWrapper\JsonCpp\json.h" />
+    <ClInclude Include="..\..\SDKWrapper\JsonCpp\win-inttypes.h" />
+    <ClInclude Include="..\..\SDKWrapper\JsonCpp\win-stdint.h" />
+    <ClInclude Include="..\..\SDKWrapper\Paramers\AlarmIO.h" />
+    <ClInclude Include="..\..\SDKWrapper\Paramers\AlarmMotion.h" />
+    <ClInclude Include="..\..\SDKWrapper\Paramers\AlarmNewIO.h" />
+    <ClInclude Include="..\..\SDKWrapper\Paramers\AlarmPIR.h" />
+    <ClInclude Include="..\..\SDKWrapper\Paramers\base64.h" />
+    <ClInclude Include="..\..\SDKWrapper\Paramers\ChLive.h" />
+    <ClInclude Include="..\..\SDKWrapper\Paramers\DropboxParam.h" />
+    <ClInclude Include="..\..\SDKWrapper\Paramers\EncodeStream.h" />
+    <ClInclude Include="..\..\SDKWrapper\Paramers\FloodLight.h" />
+    <ClInclude Include="..\..\SDKWrapper\Paramers\IPCSet.h" />
+    <ClInclude Include="..\..\SDKWrapper\Paramers\JsonPage.h" />
+    <ClInclude Include="..\..\SDKWrapper\Paramers\LiveParam.h" />
+    <ClInclude Include="..\..\SDKWrapper\Paramers\NetBase.h" />
+    <ClInclude Include="..\..\SDKWrapper\Paramers\NewNetEmail.h" />
+    <ClInclude Include="..\..\SDKWrapper\Paramers\ParamBase.h" />
+    <ClInclude Include="..\..\SDKWrapper\Paramers\RecPlan.h" />
+    <ClInclude Include="..\..\SDKWrapper\Paramers\RecPlanIPC.h" />
+    <ClInclude Include="..\..\SDKWrapper\Paramers\RSPush.h" />
+    <ClInclude Include="..\..\SDKWrapper\Paramers\RSPushSubscription.h" />
+    <ClInclude Include="..\..\SDKWrapper\Paramers\SwannCloSto.h" />
+    <ClInclude Include="..\..\SDKWrapper\Paramers\SysInfBase.h" />
+    <ClInclude Include="..\..\SDKWrapper\Paramers\SysInfHdd.h" />
+    <ClInclude Include="..\..\SDKWrapper\Paramers\SysParamDst.h" />
+    <ClInclude Include="..\..\SDKWrapper\Paramers\SysParamUSer.h" />
+    <ClInclude Include="..\..\SDKWrapper\Remote\ParamRemoteTest.h" />
+    <ClInclude Include="ConfigDlg.h" />
+    <ClInclude Include="CWebBrowser.h" />
+    <ClInclude Include="LogInfoDlg.h" />
+    <ClInclude Include="Markup.h" />
+    <ClInclude Include="MiniDumper.h" />
+    <ClInclude Include="PlaybackDlg.h" />
+    <ClInclude Include="PlayerDlg.h" />
+    <ClInclude Include="PlayWindow.h" />
+    <ClInclude Include="PreviewDlg.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="RSLibDemo.h" />
+    <ClInclude Include="RSLibDemoDlg.h" />
+    <ClInclude Include="RSSliderCtrl.h" />
+    <ClInclude Include="SearchDlg.h" />
+    <ClInclude Include="StaticWnd.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="WebbrowserDlg.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\ImageList.bmp" />
+    <Image Include="res\RSLibDemo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\RSLibDemo.rc2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="RSLibDemo.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\SDKWrapper\DeviceManager\RSDevice.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\SDKWrapper\Include\RSSDKWrapper.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\SDKWrapper\JsonCpp\jsoncpp.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\SDKWrapper\Paramers\AlarmIO.cpp" />
+    <ClCompile Include="..\..\SDKWrapper\Paramers\AlarmMotion.cpp" />
+    <ClCompile Include="..\..\SDKWrapper\Paramers\AlarmNewIO.cpp" />
+    <ClCompile Include="..\..\SDKWrapper\Paramers\AlarmPIR.cpp" />
+    <ClCompile Include="..\..\SDKWrapper\Paramers\base64.cpp" />
+    <ClCompile Include="..\..\SDKWrapper\Paramers\ChLive.cpp" />
+    <ClCompile Include="..\..\SDKWrapper\Paramers\DropboxParam.cpp" />
+    <ClCompile Include="..\..\SDKWrapper\Paramers\EncodeStream.cpp" />
+    <ClCompile Include="..\..\SDKWrapper\Paramers\FloodLight.cpp" />
+    <ClCompile Include="..\..\SDKWrapper\Paramers\IPCSet.cpp" />
+    <ClCompile Include="..\..\SDKWrapper\Paramers\JsonPage.cpp" />
+    <ClCompile Include="..\..\SDKWrapper\Paramers\LiveParam.cpp" />
+    <ClCompile Include="..\..\SDKWrapper\Paramers\NetBase.cpp" />
+    <ClCompile Include="..\..\SDKWrapper\Paramers\NewNetEmail.cpp" />
+    <ClCompile Include="..\..\SDKWrapper\Paramers\ParamBase.cpp" />
+    <ClCompile Include="..\..\SDKWrapper\Paramers\RecPlan.cpp" />
+    <ClCompile Include="..\..\SDKWrapper\Paramers\RecPlanIPC.cpp" />
+    <ClCompile Include="..\..\SDKWrapper\Paramers\RSPush.cpp" />
+    <ClCompile Include="..\..\SDKWrapper\Paramers\RSPushSubscription.cpp" />
+    <ClCompile Include="..\..\SDKWrapper\Paramers\SwannCloSto.cpp" />
+    <ClCompile Include="..\..\SDKWrapper\Paramers\SysInfBase.cpp" />
+    <ClCompile Include="..\..\SDKWrapper\Paramers\SysInfHdd.cpp" />
+    <ClCompile Include="..\..\SDKWrapper\Paramers\SysParamDst.cpp" />
+    <ClCompile Include="..\..\SDKWrapper\Paramers\SysParamUSer.cpp" />
+    <ClCompile Include="..\..\SDKWrapper\Remote\ParamRemoteTest.cpp" />
+    <ClCompile Include="ConfigDlg.cpp" />
+    <ClCompile Include="CWebBrowser.cpp" />
+    <ClCompile Include="LogInfoDlg.cpp" />
+    <ClCompile Include="Markup.cpp" />
+    <ClCompile Include="MiniDumper.cpp" />
+    <ClCompile Include="PlaybackDlg.cpp" />
+    <ClCompile Include="PlayerDlg.cpp" />
+    <ClCompile Include="PlayWindow.cpp" />
+    <ClCompile Include="PreviewDlg.cpp" />
+    <ClCompile Include="RSLibDemo.cpp" />
+    <ClCompile Include="RSLibDemoDlg.cpp" />
+    <ClCompile Include="RSSliderCtrl.cpp" />
+    <ClCompile Include="SearchDlg.cpp" />
+    <ClCompile Include="StaticWnd.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="WebbrowserDlg.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="RSLibDemo.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

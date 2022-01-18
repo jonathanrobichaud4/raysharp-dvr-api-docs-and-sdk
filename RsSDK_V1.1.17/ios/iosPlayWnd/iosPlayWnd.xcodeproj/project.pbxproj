@@ -1,0 +1,1122 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3402E4BD21D0A72B008455C3 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3455B08F20414304006B29ED /* libiconv.tbd */; };
+		341BB09E224C6C7600E91C8F /* libRSNet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C48F91219296E4001DA699 /* libRSNet.a */; };
+		344C936A224C6888003E8F33 /* DropboxParam.mm in Sources */ = {isa = PBXBuildFile; fileRef = 344C9369224C6887003E8F33 /* DropboxParam.mm */; };
+		344FACF020414BA600011656 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3455B089204142AE006B29ED /* AudioToolbox.framework */; };
+		344FACF120414BAE00011656 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3455B08B204142C0006B29ED /* VideoToolbox.framework */; };
+		344FACF220414BB600011656 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3455B09120414345006B29ED /* GLKit.framework */; };
+		344FACF320414BBF00011656 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3455B096204145ED006B29ED /* CoreMedia.framework */; };
+		345FDEEC224C6F05003B04DA /* libRSPlay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C48F92219296E5001DA699 /* libRSPlay.a */; };
+		34B8535C222FABE700583486 /* base64.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34B8535A222FABE600583486 /* base64.mm */; };
+		34B85368222FB7F600583486 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3455B0A120414920006B29ED /* AVFoundation.framework */; };
+		34C48EC72192951B001DA699 /* jsoncpp.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48D802192951B001DA699 /* jsoncpp.mm */; };
+		34C48ECA2192951B001DA699 /* RSSDKWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48D882192951B001DA699 /* RSSDKWrapper.mm */; };
+		34C48ECB2192951B001DA699 /* SNMP.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48D8E2192951B001DA699 /* SNMP.mm */; };
+		34C48ECD2192951B001DA699 /* ImgCtrl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48D942192951B001DA699 /* ImgCtrl.mm */; };
+		34C48ED02192951B001DA699 /* VideoRoi.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48D972192951B001DA699 /* VideoRoi.mm */; };
+		34C48ED22192951B001DA699 /* Defaultparam.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48D992192951B001DA699 /* Defaultparam.mm */; };
+		34C48EDB2192951B001DA699 /* AlarmPIR.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48DA72192951B001DA699 /* AlarmPIR.mm */; };
+		34C48EDC2192951B001DA699 /* LensShade.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48DA82192951B001DA699 /* LensShade.mm */; };
+		34C48EDD2192951B001DA699 /* SysParamPTZ.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48DA92192951B001DA699 /* SysParamPTZ.mm */; };
+		34C48EE02192951B001DA699 /* AlarmIO.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48DAF2192951B001DA699 /* AlarmIO.mm */; };
+		34C48EE12192951B001DA699 /* XinQiaoFD.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48DB02192951B001DA699 /* XinQiaoFD.mm */; };
+		34C48EE22192951B001DA699 /* SysMaintain.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48DB12192951B001DA699 /* SysMaintain.mm */; };
+		34C48EE52192951B001DA699 /* AlarmNewIO.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48DB62192951B001DA699 /* AlarmNewIO.mm */; };
+		34C48EE62192951B001DA699 /* IPCSet.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48DB72192951B001DA699 /* IPCSet.mm */; };
+		34C48EE72192951B001DA699 /* AnalogCh.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48DB92192951B001DA699 /* AnalogCh.mm */; };
+		34C48EE92192951B001DA699 /* IEEEX.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48DBD2192951B001DA699 /* IEEEX.mm */; };
+		34C48EEA2192951B001DA699 /* FloodLight.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48DBE2192951B001DA699 /* FloodLight.mm */; };
+		34C48EEE2192951B001DA699 /* VideoCover.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48DC22192951B001DA699 /* VideoCover.mm */; };
+		34C48EEF2192951B001DA699 /* AlarmPlan.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48DC32192951B001DA699 /* AlarmPlan.mm */; };
+		34C48EF12192951B001DA699 /* IntelligentNewUser.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48DC52192951B001DA699 /* IntelligentNewUser.mm */; };
+		34C48EF72192951B001DA699 /* NormalCloSto.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48DD32192951B001DA699 /* NormalCloSto.mm */; };
+		34C48EFA2192951B001DA699 /* NewNetEmail.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48DD72192951B001DA699 /* NewNetEmail.mm */; };
+		34C48EFC2192951B001DA699 /* NetDNS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48DD92192951B001DA699 /* NetDNS.mm */; };
+		34C48EFD2192951B001DA699 /* PerimeterLine.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48DDB2192951B001DA699 /* PerimeterLine.mm */; };
+		34C48EFE2192951B001DA699 /* CaptureSet.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48DDC2192951B001DA699 /* CaptureSet.mm */; };
+		34C48F022192951B001DA699 /* AutoUpgrade.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48DE02192951B001DA699 /* AutoUpgrade.mm */; };
+		34C48F032192951C001DA699 /* HumanDetection.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48DE12192951B001DA699 /* HumanDetection.mm */; };
+		34C48F062192951C001DA699 /* PtzSchedule.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48DE52192951B001DA699 /* PtzSchedule.mm */; };
+		34C48F092192951C001DA699 /* ZeroChannel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48DEB2192951B001DA699 /* ZeroChannel.mm */; };
+		34C48F0B2192951C001DA699 /* FTP.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48DED2192951B001DA699 /* FTP.mm */; };
+		34C48F0F2192951C001DA699 /* SoundAlarm.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48DF22192951B001DA699 /* SoundAlarm.mm */; };
+		34C48F102192951C001DA699 /* AlarmPtz.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48DF42192951B001DA699 /* AlarmPtz.mm */; };
+		34C48F112192951C001DA699 /* AlarmMotion.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48DF52192951B001DA699 /* AlarmMotion.mm */; };
+		34C48F122192951C001DA699 /* GetSetParam.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48DF62192951B001DA699 /* GetSetParam.mm */; };
+		34C48F162192951C001DA699 /* SXHTTPS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48DFD2192951B001DA699 /* SXHTTPS.mm */; };
+		34C48F172192951C001DA699 /* SysParamDst.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E002192951B001DA699 /* SysParamDst.mm */; };
+		34C48F192192951C001DA699 /* PeopleCrossCounting.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E032192951B001DA699 /* PeopleCrossCounting.mm */; };
+		34C48F1B2192951C001DA699 /* FishEye.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E052192951B001DA699 /* FishEye.mm */; };
+		34C48F1C2192951C001DA699 /* RecInfo.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E072192951B001DA699 /* RecInfo.mm */; };
+		34C48F1F2192951C001DA699 /* Alarmblock.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E0D2192951B001DA699 /* Alarmblock.mm */; };
+		34C48F202192951C001DA699 /* Devlog.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E0E2192951B001DA699 /* Devlog.mm */; };
+		34C48F232192951C001DA699 /* ParamBase.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E152192951B001DA699 /* ParamBase.mm */; };
+		34C48F242192951C001DA699 /* IPFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E162192951B001DA699 /* IPFilter.mm */; };
+		34C48F252192951C001DA699 /* SSL.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E1A2192951B001DA699 /* SSL.mm */; };
+		34C48F262192951C001DA699 /* RedMantleDetection.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E1C2192951B001DA699 /* RedMantleDetection.mm */; };
+		34C48F272192951C001DA699 /* IOAlarmManage.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E1E2192951B001DA699 /* IOAlarmManage.mm */; };
+		34C48F282192951C001DA699 /* RTSP.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E1F2192951B001DA699 /* RTSP.mm */; };
+		34C48F2A2192951C001DA699 /* GB28181.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E212192951B001DA699 /* GB28181.mm */; };
+		34C48F2B2192951C001DA699 /* Voicectrl.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E232192951B001DA699 /* Voicectrl.mm */; };
+		34C48F2D2192951C001DA699 /* NetBase.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E252192951B001DA699 /* NetBase.mm */; };
+		34C48F2E2192951C001DA699 /* FaceDetection.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E262192951B001DA699 /* FaceDetection.mm */; };
+		34C48F2F2192951C001DA699 /* SystemID.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E272192951B001DA699 /* SystemID.mm */; };
+		34C48F312192951C001DA699 /* FtpPlan.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E292192951B001DA699 /* FtpPlan.mm */; };
+		34C48F332192951C001DA699 /* IPFilterList.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E2B2192951B001DA699 /* IPFilterList.mm */; };
+		34C48F342192951C001DA699 /* RecPlanIPC.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E2C2192951B001DA699 /* RecPlanIPC.mm */; };
+		34C48F352192951C001DA699 /* AlarmAbnormity.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E2E2192951B001DA699 /* AlarmAbnormity.mm */; };
+		34C48F362192951C001DA699 /* RSPush.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E302192951B001DA699 /* RSPush.mm */; };
+		34C48F382192951C001DA699 /* CaptureJh.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E332192951B001DA699 /* CaptureJh.mm */; };
+		34C48F392192951C001DA699 /* SwitchSet.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E342192951B001DA699 /* SwitchSet.mm */; };
+		34C48F3A2192951C001DA699 /* HttpSet.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E352192951B001DA699 /* HttpSet.mm */; };
+		34C48F3B2192951C001DA699 /* VideoOutput.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E372192951B001DA699 /* VideoOutput.mm */; };
+		34C48F3C2192951C001DA699 /* EncodeStream.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E392192951B001DA699 /* EncodeStream.mm */; };
+		34C48F3D2192951C001DA699 /* LiveParam.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E3A2192951B001DA699 /* LiveParam.mm */; };
+		34C48F402192951C001DA699 /* RecConfig.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E412192951B001DA699 /* RecConfig.mm */; };
+		34C48F412192951C001DA699 /* IntelligentPlan.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E452192951B001DA699 /* IntelligentPlan.mm */; };
+		34C48F452192951C001DA699 /* ChLive.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E4B2192951B001DA699 /* ChLive.mm */; };
+		34C48F4B2192951C001DA699 /* SysInfHdd.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E532192951B001DA699 /* SysInfHdd.mm */; };
+		34C48F4C2192951C001DA699 /* RecPlan.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E542192951B001DA699 /* RecPlan.mm */; };
+		34C48F4D2192951C001DA699 /* PlatformSet.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E572192951B001DA699 /* PlatformSet.mm */; };
+		34C48F4F2192951C001DA699 /* NetVPN.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E5B2192951B001DA699 /* NetVPN.mm */; };
+		34C48F512192951C001DA699 /* NormalCloStoEm.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E5D2192951B001DA699 /* NormalCloStoEm.mm */; };
+		34C48F522192951C001DA699 /* ShowIntell.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E622192951B001DA699 /* ShowIntell.mm */; };
+		34C48F542192951C001DA699 /* SwannCloSto.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E662192951B001DA699 /* SwannCloSto.mm */; };
+		34C48F5A2192951C001DA699 /* ProManage.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E6E2192951B001DA699 /* ProManage.mm */; };
+		34C48F5B2192951C001DA699 /* PerimeterZone.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E702192951B001DA699 /* PerimeterZone.mm */; };
+		34C48F5C2192951C001DA699 /* VideoSet.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E712192951B001DA699 /* VideoSet.mm */; };
+		34C48F5F2192951C001DA699 /* JsonPage.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E762192951B001DA699 /* JsonPage.mm */; };
+		34C48F602192951C001DA699 /* SysInfBase.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E772192951B001DA699 /* SysInfBase.mm */; };
+		34C48F622192951C001DA699 /* SysParamSerial.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E792192951B001DA699 /* SysParamSerial.mm */; };
+		34C48F632192951C001DA699 /* RecPlanSmart.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E7A2192951B001DA699 /* RecPlanSmart.mm */; };
+		34C48F652192951C001DA699 /* ALTEReport.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E7C2192951B001DA699 /* ALTEReport.mm */; };
+		34C48F662192951C001DA699 /* EPlatform.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E7D2192951B001DA699 /* EPlatform.mm */; };
+		34C48F672192951C001DA699 /* NetEmail.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E7E2192951B001DA699 /* NetEmail.mm */; };
+		34C48F682192951C001DA699 /* NetFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E7F2192951B001DA699 /* NetFilter.mm */; };
+		34C48F6A2192951C001DA699 /* ChnInfo.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E812192951B001DA699 /* ChnInfo.mm */; };
+		34C48F6F2192951C001DA699 /* GoodsLostLegacy.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E882192951B001DA699 /* GoodsLostLegacy.mm */; };
+		34C48F762192951C001DA699 /* SwannWifi.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E922192951B001DA699 /* SwannWifi.mm */; };
+		34C48F792192951C001DA699 /* SysParamUSer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E972192951B001DA699 /* SysParamUSer.mm */; };
+		34C48F7B2192951C001DA699 /* SendCertificate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E992192951B001DA699 /* SendCertificate.mm */; };
+		34C48F7C2192951C001DA699 /* EmailPlan.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E9B2192951B001DA699 /* EmailPlan.mm */; };
+		34C48F7D2192951C001DA699 /* IntrusionDetection.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E9C2192951B001DA699 /* IntrusionDetection.mm */; };
+		34C48F7F2192951C001DA699 /* RSPushSubscription.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E9E2192951B001DA699 /* RSPushSubscription.mm */; };
+		34C48F802192951C001DA699 /* UserAF.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48E9F2192951B001DA699 /* UserAF.mm */; };
+		34C48F822192951C001DA699 /* TypeMeterRecognition.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48EA32192951B001DA699 /* TypeMeterRecognition.mm */; };
+		34C48F862192951C001DA699 /* RSDevice.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48EB82192951B001DA699 /* RSDevice.mm */; };
+		34C48F8D2192951C001DA699 /* ParamRemoteTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = 34C48EC42192951B001DA699 /* ParamRemoteTest.mm */; };
+		FD23E9B920230930007AD63E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD23E9B820230930007AD63E /* AppDelegate.m */; };
+		FD23E9BC20230930007AD63E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD23E9BB20230930007AD63E /* ViewController.m */; };
+		FD23E9BF20230930007AD63E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD23E9BD20230930007AD63E /* Main.storyboard */; };
+		FD23E9C120230930007AD63E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD23E9C020230930007AD63E /* Assets.xcassets */; };
+		FD23E9C420230930007AD63E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD23E9C220230930007AD63E /* LaunchScreen.storyboard */; };
+		FD23E9C720230930007AD63E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FD23E9C620230930007AD63E /* main.m */; };
+		FDA34E78202310CA004E0ECD /* PlayViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = FDA34E76202310CA004E0ECD /* PlayViewController.mm */; };
+		FDA34E79202310CA004E0ECD /* PlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDA34E77202310CA004E0ECD /* PlayViewController.xib */; };
+		FDA34E7D20231268004E0ECD /* PlayWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA34E7B20231268004E0ECD /* PlayWindow.m */; };
+		FDA34E7E20231268004E0ECD /* PlayWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDA34E7C20231268004E0ECD /* PlayWindow.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		340897A520425E87002F84D5 /* libt2u.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libt2u.a; path = ../../../svn/SDK_NEW/RSNet/RSNet/p2p/ios/vv/libt2u.a; sourceTree = "<group>"; };
+		344C9368224C6887003E8F33 /* DropboxParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropboxParam.h; sourceTree = "<group>"; };
+		344C9369224C6887003E8F33 /* DropboxParam.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DropboxParam.mm; sourceTree = "<group>"; };
+		3455B089204142AE006B29ED /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		3455B08B204142C0006B29ED /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		3455B08D204142D4006B29ED /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		3455B08F20414304006B29ED /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		3455B09120414345006B29ED /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		3455B096204145ED006B29ED /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		3455B099204147B9006B29ED /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		3455B09B204148A3006B29ED /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		3455B09D204148AA006B29ED /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		3455B09F204148C5006B29ED /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3455B0A120414920006B29ED /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		3455B0A320414931006B29ED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3455B0A720414977006B29ED /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		34B8535A222FABE600583486 /* base64.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = base64.mm; sourceTree = "<group>"; };
+		34B8535B222FABE700583486 /* base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base64.h; sourceTree = "<group>"; };
+		34C3AD2E206DDBE00038210B /* libz.1.2.11.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.11.tbd; path = usr/lib/libz.1.2.11.tbd; sourceTree = SDKROOT; };
+		34C3AD30206DE2230038210B /* libm.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libm.tbd; path = usr/lib/libm.tbd; sourceTree = SDKROOT; };
+		34C3AD32206DE27C0038210B /* libbz2.1.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.1.0.tbd; path = usr/lib/libbz2.1.0.tbd; sourceTree = SDKROOT; };
+		34C48D7C2192951B001DA699 /* json-forwards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "json-forwards.h"; sourceTree = "<group>"; };
+		34C48D7F2192951B001DA699 /* json.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = json.h; sourceTree = "<group>"; };
+		34C48D802192951B001DA699 /* jsoncpp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = jsoncpp.mm; sourceTree = "<group>"; };
+		34C48D832192951B001DA699 /* RSSDKWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSDKWrapper.h; sourceTree = "<group>"; };
+		34C48D842192951B001DA699 /* RSNetProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSNetProtocol.h; sourceTree = "<group>"; };
+		34C48D852192951B001DA699 /* RSPlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSPlay.h; sourceTree = "<group>"; };
+		34C48D872192951B001DA699 /* correction_type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = correction_type.h; sourceTree = "<group>"; };
+		34C48D882192951B001DA699 /* RSSDKWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RSSDKWrapper.mm; sourceTree = "<group>"; };
+		34C48D892192951B001DA699 /* common_type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common_type.h; sourceTree = "<group>"; };
+		34C48D8A2192951B001DA699 /* RSNet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSNet.h; sourceTree = "<group>"; };
+		34C48D8B2192951B001DA699 /* RSTypedef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSTypedef.h; sourceTree = "<group>"; };
+		34C48D8C2192951B001DA699 /* RSNetParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSNetParameter.h; sourceTree = "<group>"; };
+		34C48D8E2192951B001DA699 /* SNMP.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SNMP.mm; sourceTree = "<group>"; };
+		34C48D902192951B001DA699 /* IntelligentNewUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntelligentNewUser.h; sourceTree = "<group>"; };
+		34C48D912192951B001DA699 /* AlarmAbnormity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmAbnormity.h; sourceTree = "<group>"; };
+		34C48D922192951B001DA699 /* JsonPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonPage.h; sourceTree = "<group>"; };
+		34C48D932192951B001DA699 /* SwitchSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchSet.h; sourceTree = "<group>"; };
+		34C48D942192951B001DA699 /* ImgCtrl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ImgCtrl.mm; sourceTree = "<group>"; };
+		34C48D972192951B001DA699 /* VideoRoi.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VideoRoi.mm; sourceTree = "<group>"; };
+		34C48D992192951B001DA699 /* Defaultparam.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Defaultparam.mm; sourceTree = "<group>"; };
+		34C48D9B2192951B001DA699 /* SysParamSerial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SysParamSerial.h; sourceTree = "<group>"; };
+		34C48D9C2192951B001DA699 /* IPCSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPCSet.h; sourceTree = "<group>"; };
+		34C48D9E2192951B001DA699 /* VideoRoi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoRoi.h; sourceTree = "<group>"; };
+		34C48DA12192951B001DA699 /* SwannWifi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwannWifi.h; sourceTree = "<group>"; };
+		34C48DA32192951B001DA699 /* SoundAlarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundAlarm.h; sourceTree = "<group>"; };
+		34C48DA72192951B001DA699 /* AlarmPIR.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AlarmPIR.mm; sourceTree = "<group>"; };
+		34C48DA82192951B001DA699 /* LensShade.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LensShade.mm; sourceTree = "<group>"; };
+		34C48DA92192951B001DA699 /* SysParamPTZ.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SysParamPTZ.mm; sourceTree = "<group>"; };
+		34C48DAA2192951B001DA699 /* AlarmPIR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmPIR.h; sourceTree = "<group>"; };
+		34C48DAD2192951B001DA699 /* ChLive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChLive.h; sourceTree = "<group>"; };
+		34C48DAE2192951B001DA699 /* EmailPlan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailPlan.h; sourceTree = "<group>"; };
+		34C48DAF2192951B001DA699 /* AlarmIO.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AlarmIO.mm; sourceTree = "<group>"; };
+		34C48DB02192951B001DA699 /* XinQiaoFD.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = XinQiaoFD.mm; sourceTree = "<group>"; };
+		34C48DB12192951B001DA699 /* SysMaintain.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SysMaintain.mm; sourceTree = "<group>"; };
+		34C48DB32192951B001DA699 /* Devlog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Devlog.h; sourceTree = "<group>"; };
+		34C48DB42192951B001DA699 /* RecPlanSmart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecPlanSmart.h; sourceTree = "<group>"; };
+		34C48DB62192951B001DA699 /* AlarmNewIO.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AlarmNewIO.mm; sourceTree = "<group>"; };
+		34C48DB72192951B001DA699 /* IPCSet.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = IPCSet.mm; sourceTree = "<group>"; };
+		34C48DB82192951B001DA699 /* StdAfx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StdAfx.h; sourceTree = "<group>"; };
+		34C48DB92192951B001DA699 /* AnalogCh.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AnalogCh.mm; sourceTree = "<group>"; };
+		34C48DBB2192951B001DA699 /* GetSetParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetSetParam.h; sourceTree = "<group>"; };
+		34C48DBC2192951B001DA699 /* Voicectrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Voicectrl.h; sourceTree = "<group>"; };
+		34C48DBD2192951B001DA699 /* IEEEX.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = IEEEX.mm; sourceTree = "<group>"; };
+		34C48DBE2192951B001DA699 /* FloodLight.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FloodLight.mm; sourceTree = "<group>"; };
+		34C48DC22192951B001DA699 /* VideoCover.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VideoCover.mm; sourceTree = "<group>"; };
+		34C48DC32192951B001DA699 /* AlarmPlan.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AlarmPlan.mm; sourceTree = "<group>"; };
+		34C48DC52192951B001DA699 /* IntelligentNewUser.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = IntelligentNewUser.mm; sourceTree = "<group>"; };
+		34C48DC62192951B001DA699 /* EncodeStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncodeStream.h; sourceTree = "<group>"; };
+		34C48DC72192951B001DA699 /* Alarmblock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alarmblock.h; sourceTree = "<group>"; };
+		34C48DC92192951B001DA699 /* ImgCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImgCtrl.h; sourceTree = "<group>"; };
+		34C48DCA2192951B001DA699 /* RTSP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTSP.h; sourceTree = "<group>"; };
+		34C48DCC2192951B001DA699 /* RecConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecConfig.h; sourceTree = "<group>"; };
+		34C48DCE2192951B001DA699 /* AnalogCh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalogCh.h; sourceTree = "<group>"; };
+		34C48DD02192951B001DA699 /* NetEmail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetEmail.h; sourceTree = "<group>"; };
+		34C48DD22192951B001DA699 /* FishEye.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FishEye.h; sourceTree = "<group>"; };
+		34C48DD32192951B001DA699 /* NormalCloSto.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NormalCloSto.mm; sourceTree = "<group>"; };
+		34C48DD42192951B001DA699 /* NetFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetFilter.h; sourceTree = "<group>"; };
+		34C48DD72192951B001DA699 /* NewNetEmail.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NewNetEmail.mm; sourceTree = "<group>"; };
+		34C48DD92192951B001DA699 /* NetDNS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NetDNS.mm; sourceTree = "<group>"; };
+		34C48DDA2192951B001DA699 /* SNMP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNMP.h; sourceTree = "<group>"; };
+		34C48DDB2192951B001DA699 /* PerimeterLine.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PerimeterLine.mm; sourceTree = "<group>"; };
+		34C48DDC2192951B001DA699 /* CaptureSet.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CaptureSet.mm; sourceTree = "<group>"; };
+		34C48DE02192951B001DA699 /* AutoUpgrade.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AutoUpgrade.mm; sourceTree = "<group>"; };
+		34C48DE12192951B001DA699 /* HumanDetection.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HumanDetection.mm; sourceTree = "<group>"; };
+		34C48DE22192951B001DA699 /* ShowIntell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowIntell.h; sourceTree = "<group>"; };
+		34C48DE52192951B001DA699 /* PtzSchedule.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PtzSchedule.mm; sourceTree = "<group>"; };
+		34C48DE62192951B001DA699 /* SystemID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemID.h; sourceTree = "<group>"; };
+		34C48DE82192951B001DA699 /* UserAF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAF.h; sourceTree = "<group>"; };
+		34C48DE92192951B001DA699 /* SysParamUSer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SysParamUSer.h; sourceTree = "<group>"; };
+		34C48DEB2192951B001DA699 /* ZeroChannel.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZeroChannel.mm; sourceTree = "<group>"; };
+		34C48DED2192951B001DA699 /* FTP.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FTP.mm; sourceTree = "<group>"; };
+		34C48DEF2192951B001DA699 /* AlarmPlan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmPlan.h; sourceTree = "<group>"; };
+		34C48DF22192951B001DA699 /* SoundAlarm.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SoundAlarm.mm; sourceTree = "<group>"; };
+		34C48DF32192951B001DA699 /* NormalCloSto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalCloSto.h; sourceTree = "<group>"; };
+		34C48DF42192951B001DA699 /* AlarmPtz.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AlarmPtz.mm; sourceTree = "<group>"; };
+		34C48DF52192951B001DA699 /* AlarmMotion.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AlarmMotion.mm; sourceTree = "<group>"; };
+		34C48DF62192951B001DA699 /* GetSetParam.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GetSetParam.mm; sourceTree = "<group>"; };
+		34C48DF72192951B001DA699 /* RSPushSubscription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSPushSubscription.h; sourceTree = "<group>"; };
+		34C48DF82192951B001DA699 /* FTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTP.h; sourceTree = "<group>"; };
+		34C48DFC2192951B001DA699 /* SysMaintain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SysMaintain.h; sourceTree = "<group>"; };
+		34C48DFD2192951B001DA699 /* SXHTTPS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SXHTTPS.mm; sourceTree = "<group>"; };
+		34C48DFE2192951B001DA699 /* PeopleCrossCounting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleCrossCounting.h; sourceTree = "<group>"; };
+		34C48DFF2192951B001DA699 /* NetBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetBase.h; sourceTree = "<group>"; };
+		34C48E002192951B001DA699 /* SysParamDst.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SysParamDst.mm; sourceTree = "<group>"; };
+		34C48E022192951B001DA699 /* SysInfBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SysInfBase.h; sourceTree = "<group>"; };
+		34C48E032192951B001DA699 /* PeopleCrossCounting.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PeopleCrossCounting.mm; sourceTree = "<group>"; };
+		34C48E052192951B001DA699 /* FishEye.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FishEye.mm; sourceTree = "<group>"; };
+		34C48E062192951B001DA699 /* PlatformSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlatformSet.h; sourceTree = "<group>"; };
+		34C48E072192951B001DA699 /* RecInfo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RecInfo.mm; sourceTree = "<group>"; };
+		34C48E082192951B001DA699 /* IntrusionDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntrusionDetection.h; sourceTree = "<group>"; };
+		34C48E0B2192951B001DA699 /* HttpSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpSet.h; sourceTree = "<group>"; };
+		34C48E0C2192951B001DA699 /* Defaultparam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Defaultparam.h; sourceTree = "<group>"; };
+		34C48E0D2192951B001DA699 /* Alarmblock.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Alarmblock.mm; sourceTree = "<group>"; };
+		34C48E0E2192951B001DA699 /* Devlog.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Devlog.mm; sourceTree = "<group>"; };
+		34C48E102192951B001DA699 /* ChnInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChnInfo.h; sourceTree = "<group>"; };
+		34C48E112192951B001DA699 /* PerimeterLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerimeterLine.h; sourceTree = "<group>"; };
+		34C48E132192951B001DA699 /* FaceDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceDetection.h; sourceTree = "<group>"; };
+		34C48E142192951B001DA699 /* SendCertificate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendCertificate.h; sourceTree = "<group>"; };
+		34C48E152192951B001DA699 /* ParamBase.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ParamBase.mm; sourceTree = "<group>"; };
+		34C48E162192951B001DA699 /* IPFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = IPFilter.mm; sourceTree = "<group>"; };
+		34C48E172192951B001DA699 /* SysParamPTZ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SysParamPTZ.h; sourceTree = "<group>"; };
+		34C48E182192951B001DA699 /* CaptureSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureSet.h; sourceTree = "<group>"; };
+		34C48E192192951B001DA699 /* AlarmIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmIO.h; sourceTree = "<group>"; };
+		34C48E1A2192951B001DA699 /* SSL.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SSL.mm; sourceTree = "<group>"; };
+		34C48E1B2192951B001DA699 /* LiveParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveParam.h; sourceTree = "<group>"; };
+		34C48E1C2192951B001DA699 /* RedMantleDetection.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RedMantleDetection.mm; sourceTree = "<group>"; };
+		34C48E1D2192951B001DA699 /* IEEEX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IEEEX.h; sourceTree = "<group>"; };
+		34C48E1E2192951B001DA699 /* IOAlarmManage.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = IOAlarmManage.mm; sourceTree = "<group>"; };
+		34C48E1F2192951B001DA699 /* RTSP.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RTSP.mm; sourceTree = "<group>"; };
+		34C48E212192951B001DA699 /* GB28181.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GB28181.mm; sourceTree = "<group>"; };
+		34C48E222192951B001DA699 /* TypeMeterRecognition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeMeterRecognition.h; sourceTree = "<group>"; };
+		34C48E232192951B001DA699 /* Voicectrl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Voicectrl.mm; sourceTree = "<group>"; };
+		34C48E252192951B001DA699 /* NetBase.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NetBase.mm; sourceTree = "<group>"; };
+		34C48E262192951B001DA699 /* FaceDetection.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FaceDetection.mm; sourceTree = "<group>"; };
+		34C48E272192951B001DA699 /* SystemID.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SystemID.mm; sourceTree = "<group>"; };
+		34C48E292192951B001DA699 /* FtpPlan.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FtpPlan.mm; sourceTree = "<group>"; };
+		34C48E2B2192951B001DA699 /* IPFilterList.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = IPFilterList.mm; sourceTree = "<group>"; };
+		34C48E2C2192951B001DA699 /* RecPlanIPC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RecPlanIPC.mm; sourceTree = "<group>"; };
+		34C48E2D2192951B001DA699 /* RecPlanIPC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecPlanIPC.h; sourceTree = "<group>"; };
+		34C48E2E2192951B001DA699 /* AlarmAbnormity.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AlarmAbnormity.mm; sourceTree = "<group>"; };
+		34C48E2F2192951B001DA699 /* CaptureJh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureJh.h; sourceTree = "<group>"; };
+		34C48E302192951B001DA699 /* RSPush.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RSPush.mm; sourceTree = "<group>"; };
+		34C48E322192951B001DA699 /* SwannCloSto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwannCloSto.h; sourceTree = "<group>"; };
+		34C48E332192951B001DA699 /* CaptureJh.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CaptureJh.mm; sourceTree = "<group>"; };
+		34C48E342192951B001DA699 /* SwitchSet.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SwitchSet.mm; sourceTree = "<group>"; };
+		34C48E352192951B001DA699 /* HttpSet.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HttpSet.mm; sourceTree = "<group>"; };
+		34C48E362192951B001DA699 /* LensShade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LensShade.h; sourceTree = "<group>"; };
+		34C48E372192951B001DA699 /* VideoOutput.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VideoOutput.mm; sourceTree = "<group>"; };
+		34C48E382192951B001DA699 /* AlarmMotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmMotion.h; sourceTree = "<group>"; };
+		34C48E392192951B001DA699 /* EncodeStream.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EncodeStream.mm; sourceTree = "<group>"; };
+		34C48E3A2192951B001DA699 /* LiveParam.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LiveParam.mm; sourceTree = "<group>"; };
+		34C48E3B2192951B001DA699 /* SSL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSL.h; sourceTree = "<group>"; };
+		34C48E3C2192951B001DA699 /* SysInfHdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SysInfHdd.h; sourceTree = "<group>"; };
+		34C48E3E2192951B001DA699 /* RecInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecInfo.h; sourceTree = "<group>"; };
+		34C48E402192951B001DA699 /* IOAlarmManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOAlarmManage.h; sourceTree = "<group>"; };
+		34C48E412192951B001DA699 /* RecConfig.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RecConfig.mm; sourceTree = "<group>"; };
+		34C48E422192951B001DA699 /* SysParamDst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SysParamDst.h; sourceTree = "<group>"; };
+		34C48E432192951B001DA699 /* PtzSchedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PtzSchedule.h; sourceTree = "<group>"; };
+		34C48E442192951B001DA699 /* XinQiaoFD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XinQiaoFD.h; sourceTree = "<group>"; };
+		34C48E452192951B001DA699 /* IntelligentPlan.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = IntelligentPlan.mm; sourceTree = "<group>"; };
+		34C48E482192951B001DA699 /* IPFilterList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPFilterList.h; sourceTree = "<group>"; };
+		34C48E492192951B001DA699 /* GoodsLostLegacy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsLostLegacy.h; sourceTree = "<group>"; };
+		34C48E4B2192951B001DA699 /* ChLive.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ChLive.mm; sourceTree = "<group>"; };
+		34C48E4C2192951B001DA699 /* RecPlan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecPlan.h; sourceTree = "<group>"; };
+		34C48E522192951B001DA699 /* IntelligentPlan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntelligentPlan.h; sourceTree = "<group>"; };
+		34C48E532192951B001DA699 /* SysInfHdd.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SysInfHdd.mm; sourceTree = "<group>"; };
+		34C48E542192951B001DA699 /* RecPlan.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RecPlan.mm; sourceTree = "<group>"; };
+		34C48E552192951B001DA699 /* FtpPlan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FtpPlan.h; sourceTree = "<group>"; };
+		34C48E562192951B001DA699 /* ALTEReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALTEReport.h; sourceTree = "<group>"; };
+		34C48E572192951B001DA699 /* PlatformSet.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PlatformSet.mm; sourceTree = "<group>"; };
+		34C48E592192951B001DA699 /* HumanDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HumanDetection.h; sourceTree = "<group>"; };
+		34C48E5A2192951B001DA699 /* EPlatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPlatform.h; sourceTree = "<group>"; };
+		34C48E5B2192951B001DA699 /* NetVPN.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NetVPN.mm; sourceTree = "<group>"; };
+		34C48E5D2192951B001DA699 /* NormalCloStoEm.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NormalCloStoEm.mm; sourceTree = "<group>"; };
+		34C48E5E2192951B001DA699 /* AlarmPtz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmPtz.h; sourceTree = "<group>"; };
+		34C48E5F2192951B001DA699 /* VideoSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoSet.h; sourceTree = "<group>"; };
+		34C48E602192951B001DA699 /* PerimeterZone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerimeterZone.h; sourceTree = "<group>"; };
+		34C48E612192951B001DA699 /* ZeroChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZeroChannel.h; sourceTree = "<group>"; };
+		34C48E622192951B001DA699 /* ShowIntell.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ShowIntell.mm; sourceTree = "<group>"; };
+		34C48E632192951B001DA699 /* AutoUpgrade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoUpgrade.h; sourceTree = "<group>"; };
+		34C48E652192951B001DA699 /* VideoCover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCover.h; sourceTree = "<group>"; };
+		34C48E662192951B001DA699 /* SwannCloSto.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SwannCloSto.mm; sourceTree = "<group>"; };
+		34C48E6A2192951B001DA699 /* GB28181.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GB28181.h; sourceTree = "<group>"; };
+		34C48E6D2192951B001DA699 /* SXHTTPS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXHTTPS.h; sourceTree = "<group>"; };
+		34C48E6E2192951B001DA699 /* ProManage.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ProManage.mm; sourceTree = "<group>"; };
+		34C48E6F2192951B001DA699 /* NetVPN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetVPN.h; sourceTree = "<group>"; };
+		34C48E702192951B001DA699 /* PerimeterZone.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PerimeterZone.mm; sourceTree = "<group>"; };
+		34C48E712192951B001DA699 /* VideoSet.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VideoSet.mm; sourceTree = "<group>"; };
+		34C48E722192951B001DA699 /* AlarmNewIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmNewIO.h; sourceTree = "<group>"; };
+		34C48E732192951B001DA699 /* NetDNS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetDNS.h; sourceTree = "<group>"; };
+		34C48E762192951B001DA699 /* JsonPage.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = JsonPage.mm; sourceTree = "<group>"; };
+		34C48E772192951B001DA699 /* SysInfBase.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SysInfBase.mm; sourceTree = "<group>"; };
+		34C48E792192951B001DA699 /* SysParamSerial.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SysParamSerial.mm; sourceTree = "<group>"; };
+		34C48E7A2192951B001DA699 /* RecPlanSmart.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RecPlanSmart.mm; sourceTree = "<group>"; };
+		34C48E7C2192951B001DA699 /* ALTEReport.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ALTEReport.mm; sourceTree = "<group>"; };
+		34C48E7D2192951B001DA699 /* EPlatform.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EPlatform.mm; sourceTree = "<group>"; };
+		34C48E7E2192951B001DA699 /* NetEmail.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NetEmail.mm; sourceTree = "<group>"; };
+		34C48E7F2192951B001DA699 /* NetFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NetFilter.mm; sourceTree = "<group>"; };
+		34C48E812192951B001DA699 /* ChnInfo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ChnInfo.mm; sourceTree = "<group>"; };
+		34C48E822192951B001DA699 /* FloodLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloodLight.h; sourceTree = "<group>"; };
+		34C48E832192951B001DA699 /* NormalCloStoEm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalCloStoEm.h; sourceTree = "<group>"; };
+		34C48E882192951B001DA699 /* GoodsLostLegacy.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GoodsLostLegacy.mm; sourceTree = "<group>"; };
+		34C48E8E2192951B001DA699 /* IPFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPFilter.h; sourceTree = "<group>"; };
+		34C48E8F2192951B001DA699 /* ParamBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParamBase.h; sourceTree = "<group>"; };
+		34C48E912192951B001DA699 /* ProManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProManage.h; sourceTree = "<group>"; };
+		34C48E922192951B001DA699 /* SwannWifi.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SwannWifi.mm; sourceTree = "<group>"; };
+		34C48E952192951B001DA699 /* RedMantleDetection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedMantleDetection.h; sourceTree = "<group>"; };
+		34C48E962192951B001DA699 /* NewNetEmail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewNetEmail.h; sourceTree = "<group>"; };
+		34C48E972192951B001DA699 /* SysParamUSer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SysParamUSer.mm; sourceTree = "<group>"; };
+		34C48E992192951B001DA699 /* SendCertificate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SendCertificate.mm; sourceTree = "<group>"; };
+		34C48E9A2192951B001DA699 /* VideoOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoOutput.h; sourceTree = "<group>"; };
+		34C48E9B2192951B001DA699 /* EmailPlan.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EmailPlan.mm; sourceTree = "<group>"; };
+		34C48E9C2192951B001DA699 /* IntrusionDetection.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = IntrusionDetection.mm; sourceTree = "<group>"; };
+		34C48E9E2192951B001DA699 /* RSPushSubscription.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RSPushSubscription.mm; sourceTree = "<group>"; };
+		34C48E9F2192951B001DA699 /* UserAF.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = UserAF.mm; sourceTree = "<group>"; };
+		34C48EA12192951B001DA699 /* RSPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSPush.h; sourceTree = "<group>"; };
+		34C48EA32192951B001DA699 /* TypeMeterRecognition.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TypeMeterRecognition.mm; sourceTree = "<group>"; };
+		34C48EA72192951B001DA699 /* connection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = connection.h; sourceTree = "<group>"; };
+		34C48EA82192951B001DA699 /* remote_playback_thumbnails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = remote_playback_thumbnails.h; sourceTree = "<group>"; };
+		34C48EA92192951B001DA699 /* search_modify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = search_modify.h; sourceTree = "<group>"; };
+		34C48EAA2192951B001DA699 /* local_playback_thumbnails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = local_playback_thumbnails.h; sourceTree = "<group>"; };
+		34C48EAB2192951B001DA699 /* local_playback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = local_playback.h; sourceTree = "<group>"; };
+		34C48EAC2192951B001DA699 /* remote_playback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = remote_playback.h; sourceTree = "<group>"; };
+		34C48EAD2192951B001DA699 /* search_record.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = search_record.h; sourceTree = "<group>"; };
+		34C48EAE2192951B001DA699 /* authority_ability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = authority_ability.h; sourceTree = "<group>"; };
+		34C48EAF2192951B001DA699 /* forward_define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = forward_define.h; sourceTree = "<group>"; };
+		34C48EB02192951B001DA699 /* download_record.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = download_record.h; sourceTree = "<group>"; };
+		34C48EB12192951B001DA699 /* convert_file_type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = convert_file_type.h; sourceTree = "<group>"; };
+		34C48EB32192951B001DA699 /* RSDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSDevice.h; sourceTree = "<group>"; };
+		34C48EB42192951B001DA699 /* capture_from_device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = capture_from_device.h; sourceTree = "<group>"; };
+		34C48EB52192951B001DA699 /* ptz_control.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ptz_control.h; sourceTree = "<group>"; };
+		34C48EB62192951B001DA699 /* preview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = preview.h; sourceTree = "<group>"; };
+		34C48EB72192951B001DA699 /* talk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = talk.h; sourceTree = "<group>"; };
+		34C48EB82192951B001DA699 /* RSDevice.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RSDevice.mm; sourceTree = "<group>"; };
+		34C48EC12192951B001DA699 /* StdAfx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StdAfx.h; sourceTree = "<group>"; };
+		34C48EC42192951B001DA699 /* ParamRemoteTest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ParamRemoteTest.mm; sourceTree = "<group>"; };
+		34C48EC62192951B001DA699 /* ParamRemoteTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParamRemoteTest.h; sourceTree = "<group>"; };
+		34C48F91219296E4001DA699 /* libRSNet.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libRSNet.a; path = iosPlayWnd/lib/libRSNet.a; sourceTree = "<group>"; };
+		34C48F92219296E5001DA699 /* libRSPlay.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libRSPlay.a; path = iosPlayWnd/lib/libRSPlay.a; sourceTree = "<group>"; };
+		34D5CAE62123F25800215736 /* libP2PClient.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libP2PClient.a; path = "../../../svn/mobile-app/SDK/RSNet/RSNet/p2p/ios/lx/libP2PClient.a"; sourceTree = "<group>"; };
+		FD23E9B420230930007AD63E /* iosPlayWnd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosPlayWnd.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD23E9B720230930007AD63E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FD23E9B820230930007AD63E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FD23E9BA20230930007AD63E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FD23E9BB20230930007AD63E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FD23E9BE20230930007AD63E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FD23E9C020230930007AD63E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FD23E9C320230930007AD63E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FD23E9C520230930007AD63E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD23E9C620230930007AD63E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FDA34E75202310CA004E0ECD /* PlayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayViewController.h; sourceTree = "<group>"; };
+		FDA34E76202310CA004E0ECD /* PlayViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = PlayViewController.mm; sourceTree = "<group>"; };
+		FDA34E77202310CA004E0ECD /* PlayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayViewController.xib; sourceTree = "<group>"; };
+		FDA34E7A20231268004E0ECD /* PlayWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayWindow.h; sourceTree = "<group>"; };
+		FDA34E7B20231268004E0ECD /* PlayWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayWindow.m; sourceTree = "<group>"; };
+		FDA34E7C20231268004E0ECD /* PlayWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayWindow.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FD23E9B120230930007AD63E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				345FDEEC224C6F05003B04DA /* libRSPlay.a in Frameworks */,
+				341BB09E224C6C7600E91C8F /* libRSNet.a in Frameworks */,
+				34B85368222FB7F600583486 /* AVFoundation.framework in Frameworks */,
+				3402E4BD21D0A72B008455C3 /* libiconv.tbd in Frameworks */,
+				344FACF320414BBF00011656 /* CoreMedia.framework in Frameworks */,
+				344FACF220414BB600011656 /* GLKit.framework in Frameworks */,
+				344FACF120414BAE00011656 /* VideoToolbox.framework in Frameworks */,
+				344FACF020414BA600011656 /* AudioToolbox.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3455AEB3204114BF006B29ED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				34C48F91219296E4001DA699 /* libRSNet.a */,
+				34C48F92219296E5001DA699 /* libRSPlay.a */,
+				34D5CAE62123F25800215736 /* libP2PClient.a */,
+				34C3AD32206DE27C0038210B /* libbz2.1.0.tbd */,
+				34C3AD30206DE2230038210B /* libm.tbd */,
+				34C3AD2E206DDBE00038210B /* libz.1.2.11.tbd */,
+				340897A520425E87002F84D5 /* libt2u.a */,
+				3455B0A720414977006B29ED /* UIKit.framework */,
+				3455B0A320414931006B29ED /* Foundation.framework */,
+				3455B0A120414920006B29ED /* AVFoundation.framework */,
+				3455B09F204148C5006B29ED /* CoreGraphics.framework */,
+				3455B09D204148AA006B29ED /* CoreVideo.framework */,
+				3455B09B204148A3006B29ED /* CoreAudio.framework */,
+				3455B099204147B9006B29ED /* CoreFoundation.framework */,
+				3455B096204145ED006B29ED /* CoreMedia.framework */,
+				3455B09120414345006B29ED /* GLKit.framework */,
+				3455B08F20414304006B29ED /* libiconv.tbd */,
+				3455B08D204142D4006B29ED /* OpenGLES.framework */,
+				3455B08B204142C0006B29ED /* VideoToolbox.framework */,
+				3455B089204142AE006B29ED /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		34C48D7A2192951B001DA699 /* SDKWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				34C48D7B2192951B001DA699 /* JsonCpp */,
+				34C48D822192951B001DA699 /* Include */,
+				34C48D8D2192951B001DA699 /* Paramers */,
+				34C48EA62192951B001DA699 /* DeviceManager */,
+				34C48EBF2192951B001DA699 /* Remote */,
+			);
+			name = SDKWrapper;
+			path = ../../../SDKWrapper;
+			sourceTree = "<group>";
+		};
+		34C48D7B2192951B001DA699 /* JsonCpp */ = {
+			isa = PBXGroup;
+			children = (
+				34C48D7C2192951B001DA699 /* json-forwards.h */,
+				34C48D7F2192951B001DA699 /* json.h */,
+				34C48D802192951B001DA699 /* jsoncpp.mm */,
+			);
+			path = JsonCpp;
+			sourceTree = "<group>";
+		};
+		34C48D822192951B001DA699 /* Include */ = {
+			isa = PBXGroup;
+			children = (
+				34C48D832192951B001DA699 /* RSSDKWrapper.h */,
+				34C48D842192951B001DA699 /* RSNetProtocol.h */,
+				34C48D852192951B001DA699 /* RSPlay.h */,
+				34C48D872192951B001DA699 /* correction_type.h */,
+				34C48D882192951B001DA699 /* RSSDKWrapper.mm */,
+				34C48D892192951B001DA699 /* common_type.h */,
+				34C48D8A2192951B001DA699 /* RSNet.h */,
+				34C48D8B2192951B001DA699 /* RSTypedef.h */,
+				34C48D8C2192951B001DA699 /* RSNetParameter.h */,
+			);
+			path = Include;
+			sourceTree = "<group>";
+		};
+		34C48D8D2192951B001DA699 /* Paramers */ = {
+			isa = PBXGroup;
+			children = (
+				344C9368224C6887003E8F33 /* DropboxParam.h */,
+				344C9369224C6887003E8F33 /* DropboxParam.mm */,
+				34B8535B222FABE700583486 /* base64.h */,
+				34B8535A222FABE600583486 /* base64.mm */,
+				34C48D912192951B001DA699 /* AlarmAbnormity.h */,
+				34C48DC72192951B001DA699 /* Alarmblock.h */,
+				34C48E192192951B001DA699 /* AlarmIO.h */,
+				34C48E382192951B001DA699 /* AlarmMotion.h */,
+				34C48E722192951B001DA699 /* AlarmNewIO.h */,
+				34C48DAA2192951B001DA699 /* AlarmPIR.h */,
+				34C48DEF2192951B001DA699 /* AlarmPlan.h */,
+				34C48E5E2192951B001DA699 /* AlarmPtz.h */,
+				34C48E562192951B001DA699 /* ALTEReport.h */,
+				34C48DCE2192951B001DA699 /* AnalogCh.h */,
+				34C48E632192951B001DA699 /* AutoUpgrade.h */,
+				34C48E2F2192951B001DA699 /* CaptureJh.h */,
+				34C48E182192951B001DA699 /* CaptureSet.h */,
+				34C48DAD2192951B001DA699 /* ChLive.h */,
+				34C48E102192951B001DA699 /* ChnInfo.h */,
+				34C48E0C2192951B001DA699 /* Defaultparam.h */,
+				34C48DB32192951B001DA699 /* Devlog.h */,
+				34C48DAE2192951B001DA699 /* EmailPlan.h */,
+				34C48DC62192951B001DA699 /* EncodeStream.h */,
+				34C48E5A2192951B001DA699 /* EPlatform.h */,
+				34C48E132192951B001DA699 /* FaceDetection.h */,
+				34C48DD22192951B001DA699 /* FishEye.h */,
+				34C48E822192951B001DA699 /* FloodLight.h */,
+				34C48DF82192951B001DA699 /* FTP.h */,
+				34C48E552192951B001DA699 /* FtpPlan.h */,
+				34C48E6A2192951B001DA699 /* GB28181.h */,
+				34C48DBB2192951B001DA699 /* GetSetParam.h */,
+				34C48E492192951B001DA699 /* GoodsLostLegacy.h */,
+				34C48E0B2192951B001DA699 /* HttpSet.h */,
+				34C48E592192951B001DA699 /* HumanDetection.h */,
+				34C48E1D2192951B001DA699 /* IEEEX.h */,
+				34C48DC92192951B001DA699 /* ImgCtrl.h */,
+				34C48D902192951B001DA699 /* IntelligentNewUser.h */,
+				34C48E522192951B001DA699 /* IntelligentPlan.h */,
+				34C48E082192951B001DA699 /* IntrusionDetection.h */,
+				34C48E402192951B001DA699 /* IOAlarmManage.h */,
+				34C48D9C2192951B001DA699 /* IPCSet.h */,
+				34C48E8E2192951B001DA699 /* IPFilter.h */,
+				34C48E482192951B001DA699 /* IPFilterList.h */,
+				34C48D922192951B001DA699 /* JsonPage.h */,
+				34C48E362192951B001DA699 /* LensShade.h */,
+				34C48E1B2192951B001DA699 /* LiveParam.h */,
+				34C48DFF2192951B001DA699 /* NetBase.h */,
+				34C48E732192951B001DA699 /* NetDNS.h */,
+				34C48DD02192951B001DA699 /* NetEmail.h */,
+				34C48DD42192951B001DA699 /* NetFilter.h */,
+				34C48E6F2192951B001DA699 /* NetVPN.h */,
+				34C48E962192951B001DA699 /* NewNetEmail.h */,
+				34C48DF32192951B001DA699 /* NormalCloSto.h */,
+				34C48E832192951B001DA699 /* NormalCloStoEm.h */,
+				34C48E8F2192951B001DA699 /* ParamBase.h */,
+				34C48DFE2192951B001DA699 /* PeopleCrossCounting.h */,
+				34C48E112192951B001DA699 /* PerimeterLine.h */,
+				34C48E602192951B001DA699 /* PerimeterZone.h */,
+				34C48E062192951B001DA699 /* PlatformSet.h */,
+				34C48E912192951B001DA699 /* ProManage.h */,
+				34C48E432192951B001DA699 /* PtzSchedule.h */,
+				34C48DCC2192951B001DA699 /* RecConfig.h */,
+				34C48E3E2192951B001DA699 /* RecInfo.h */,
+				34C48E4C2192951B001DA699 /* RecPlan.h */,
+				34C48E2D2192951B001DA699 /* RecPlanIPC.h */,
+				34C48DB42192951B001DA699 /* RecPlanSmart.h */,
+				34C48E952192951B001DA699 /* RedMantleDetection.h */,
+				34C48EA12192951B001DA699 /* RSPush.h */,
+				34C48DF72192951B001DA699 /* RSPushSubscription.h */,
+				34C48DCA2192951B001DA699 /* RTSP.h */,
+				34C48E142192951B001DA699 /* SendCertificate.h */,
+				34C48DE22192951B001DA699 /* ShowIntell.h */,
+				34C48DDA2192951B001DA699 /* SNMP.h */,
+				34C48DA32192951B001DA699 /* SoundAlarm.h */,
+				34C48E3B2192951B001DA699 /* SSL.h */,
+				34C48DB82192951B001DA699 /* StdAfx.h */,
+				34C48E322192951B001DA699 /* SwannCloSto.h */,
+				34C48DA12192951B001DA699 /* SwannWifi.h */,
+				34C48D932192951B001DA699 /* SwitchSet.h */,
+				34C48E6D2192951B001DA699 /* SXHTTPS.h */,
+				34C48E022192951B001DA699 /* SysInfBase.h */,
+				34C48E3C2192951B001DA699 /* SysInfHdd.h */,
+				34C48DFC2192951B001DA699 /* SysMaintain.h */,
+				34C48E422192951B001DA699 /* SysParamDst.h */,
+				34C48E172192951B001DA699 /* SysParamPTZ.h */,
+				34C48D9B2192951B001DA699 /* SysParamSerial.h */,
+				34C48DE92192951B001DA699 /* SysParamUSer.h */,
+				34C48DE62192951B001DA699 /* SystemID.h */,
+				34C48E222192951B001DA699 /* TypeMeterRecognition.h */,
+				34C48DE82192951B001DA699 /* UserAF.h */,
+				34C48E652192951B001DA699 /* VideoCover.h */,
+				34C48E9A2192951B001DA699 /* VideoOutput.h */,
+				34C48D9E2192951B001DA699 /* VideoRoi.h */,
+				34C48E5F2192951B001DA699 /* VideoSet.h */,
+				34C48DBC2192951B001DA699 /* Voicectrl.h */,
+				34C48E442192951B001DA699 /* XinQiaoFD.h */,
+				34C48E612192951B001DA699 /* ZeroChannel.h */,
+				34C48E2E2192951B001DA699 /* AlarmAbnormity.mm */,
+				34C48E0D2192951B001DA699 /* Alarmblock.mm */,
+				34C48DAF2192951B001DA699 /* AlarmIO.mm */,
+				34C48DF52192951B001DA699 /* AlarmMotion.mm */,
+				34C48DB62192951B001DA699 /* AlarmNewIO.mm */,
+				34C48DA72192951B001DA699 /* AlarmPIR.mm */,
+				34C48DC32192951B001DA699 /* AlarmPlan.mm */,
+				34C48DF42192951B001DA699 /* AlarmPtz.mm */,
+				34C48E7C2192951B001DA699 /* ALTEReport.mm */,
+				34C48DB92192951B001DA699 /* AnalogCh.mm */,
+				34C48DE02192951B001DA699 /* AutoUpgrade.mm */,
+				34C48E332192951B001DA699 /* CaptureJh.mm */,
+				34C48DDC2192951B001DA699 /* CaptureSet.mm */,
+				34C48E4B2192951B001DA699 /* ChLive.mm */,
+				34C48E812192951B001DA699 /* ChnInfo.mm */,
+				34C48D992192951B001DA699 /* Defaultparam.mm */,
+				34C48E0E2192951B001DA699 /* Devlog.mm */,
+				34C48E9B2192951B001DA699 /* EmailPlan.mm */,
+				34C48E392192951B001DA699 /* EncodeStream.mm */,
+				34C48E7D2192951B001DA699 /* EPlatform.mm */,
+				34C48E262192951B001DA699 /* FaceDetection.mm */,
+				34C48E052192951B001DA699 /* FishEye.mm */,
+				34C48DBE2192951B001DA699 /* FloodLight.mm */,
+				34C48DED2192951B001DA699 /* FTP.mm */,
+				34C48E292192951B001DA699 /* FtpPlan.mm */,
+				34C48E212192951B001DA699 /* GB28181.mm */,
+				34C48DF62192951B001DA699 /* GetSetParam.mm */,
+				34C48E882192951B001DA699 /* GoodsLostLegacy.mm */,
+				34C48E352192951B001DA699 /* HttpSet.mm */,
+				34C48DE12192951B001DA699 /* HumanDetection.mm */,
+				34C48DBD2192951B001DA699 /* IEEEX.mm */,
+				34C48D942192951B001DA699 /* ImgCtrl.mm */,
+				34C48DC52192951B001DA699 /* IntelligentNewUser.mm */,
+				34C48E452192951B001DA699 /* IntelligentPlan.mm */,
+				34C48E9C2192951B001DA699 /* IntrusionDetection.mm */,
+				34C48E1E2192951B001DA699 /* IOAlarmManage.mm */,
+				34C48DB72192951B001DA699 /* IPCSet.mm */,
+				34C48E162192951B001DA699 /* IPFilter.mm */,
+				34C48E2B2192951B001DA699 /* IPFilterList.mm */,
+				34C48E762192951B001DA699 /* JsonPage.mm */,
+				34C48DA82192951B001DA699 /* LensShade.mm */,
+				34C48E3A2192951B001DA699 /* LiveParam.mm */,
+				34C48E252192951B001DA699 /* NetBase.mm */,
+				34C48DD92192951B001DA699 /* NetDNS.mm */,
+				34C48E7E2192951B001DA699 /* NetEmail.mm */,
+				34C48E7F2192951B001DA699 /* NetFilter.mm */,
+				34C48E5B2192951B001DA699 /* NetVPN.mm */,
+				34C48DD72192951B001DA699 /* NewNetEmail.mm */,
+				34C48DD32192951B001DA699 /* NormalCloSto.mm */,
+				34C48E5D2192951B001DA699 /* NormalCloStoEm.mm */,
+				34C48E152192951B001DA699 /* ParamBase.mm */,
+				34C48E032192951B001DA699 /* PeopleCrossCounting.mm */,
+				34C48DDB2192951B001DA699 /* PerimeterLine.mm */,
+				34C48E702192951B001DA699 /* PerimeterZone.mm */,
+				34C48E572192951B001DA699 /* PlatformSet.mm */,
+				34C48E6E2192951B001DA699 /* ProManage.mm */,
+				34C48DE52192951B001DA699 /* PtzSchedule.mm */,
+				34C48E412192951B001DA699 /* RecConfig.mm */,
+				34C48E072192951B001DA699 /* RecInfo.mm */,
+				34C48E542192951B001DA699 /* RecPlan.mm */,
+				34C48E2C2192951B001DA699 /* RecPlanIPC.mm */,
+				34C48E7A2192951B001DA699 /* RecPlanSmart.mm */,
+				34C48E1C2192951B001DA699 /* RedMantleDetection.mm */,
+				34C48E302192951B001DA699 /* RSPush.mm */,
+				34C48E9E2192951B001DA699 /* RSPushSubscription.mm */,
+				34C48E1F2192951B001DA699 /* RTSP.mm */,
+				34C48E992192951B001DA699 /* SendCertificate.mm */,
+				34C48E622192951B001DA699 /* ShowIntell.mm */,
+				34C48D8E2192951B001DA699 /* SNMP.mm */,
+				34C48DF22192951B001DA699 /* SoundAlarm.mm */,
+				34C48E1A2192951B001DA699 /* SSL.mm */,
+				34C48E662192951B001DA699 /* SwannCloSto.mm */,
+				34C48E922192951B001DA699 /* SwannWifi.mm */,
+				34C48E342192951B001DA699 /* SwitchSet.mm */,
+				34C48DFD2192951B001DA699 /* SXHTTPS.mm */,
+				34C48E772192951B001DA699 /* SysInfBase.mm */,
+				34C48E532192951B001DA699 /* SysInfHdd.mm */,
+				34C48DB12192951B001DA699 /* SysMaintain.mm */,
+				34C48E002192951B001DA699 /* SysParamDst.mm */,
+				34C48DA92192951B001DA699 /* SysParamPTZ.mm */,
+				34C48E792192951B001DA699 /* SysParamSerial.mm */,
+				34C48E972192951B001DA699 /* SysParamUSer.mm */,
+				34C48E272192951B001DA699 /* SystemID.mm */,
+				34C48EA32192951B001DA699 /* TypeMeterRecognition.mm */,
+				34C48E9F2192951B001DA699 /* UserAF.mm */,
+				34C48DC22192951B001DA699 /* VideoCover.mm */,
+				34C48E372192951B001DA699 /* VideoOutput.mm */,
+				34C48D972192951B001DA699 /* VideoRoi.mm */,
+				34C48E712192951B001DA699 /* VideoSet.mm */,
+				34C48E232192951B001DA699 /* Voicectrl.mm */,
+				34C48DB02192951B001DA699 /* XinQiaoFD.mm */,
+				34C48DEB2192951B001DA699 /* ZeroChannel.mm */,
+			);
+			path = Paramers;
+			sourceTree = "<group>";
+		};
+		34C48EA62192951B001DA699 /* DeviceManager */ = {
+			isa = PBXGroup;
+			children = (
+				34C48EA72192951B001DA699 /* connection.h */,
+				34C48EA82192951B001DA699 /* remote_playback_thumbnails.h */,
+				34C48EA92192951B001DA699 /* search_modify.h */,
+				34C48EAA2192951B001DA699 /* local_playback_thumbnails.h */,
+				34C48EAB2192951B001DA699 /* local_playback.h */,
+				34C48EAC2192951B001DA699 /* remote_playback.h */,
+				34C48EAD2192951B001DA699 /* search_record.h */,
+				34C48EAE2192951B001DA699 /* authority_ability.h */,
+				34C48EAF2192951B001DA699 /* forward_define.h */,
+				34C48EB02192951B001DA699 /* download_record.h */,
+				34C48EB12192951B001DA699 /* convert_file_type.h */,
+				34C48EB32192951B001DA699 /* RSDevice.h */,
+				34C48EB42192951B001DA699 /* capture_from_device.h */,
+				34C48EB52192951B001DA699 /* ptz_control.h */,
+				34C48EB62192951B001DA699 /* preview.h */,
+				34C48EB72192951B001DA699 /* talk.h */,
+				34C48EB82192951B001DA699 /* RSDevice.mm */,
+			);
+			path = DeviceManager;
+			sourceTree = "<group>";
+		};
+		34C48EBF2192951B001DA699 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				34C48EC12192951B001DA699 /* StdAfx.h */,
+				34C48EC42192951B001DA699 /* ParamRemoteTest.mm */,
+				34C48EC62192951B001DA699 /* ParamRemoteTest.h */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		FD23E9AB20230930007AD63E = {
+			isa = PBXGroup;
+			children = (
+				FD23E9B620230930007AD63E /* iosPlayWnd */,
+				FD23E9B520230930007AD63E /* Products */,
+				3455AEB3204114BF006B29ED /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FD23E9B520230930007AD63E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FD23E9B420230930007AD63E /* iosPlayWnd.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FD23E9B620230930007AD63E /* iosPlayWnd */ = {
+			isa = PBXGroup;
+			children = (
+				34C48D7A2192951B001DA699 /* SDKWrapper */,
+				FD23E9B720230930007AD63E /* AppDelegate.h */,
+				FD23E9B820230930007AD63E /* AppDelegate.m */,
+				FD23E9BA20230930007AD63E /* ViewController.h */,
+				FD23E9BB20230930007AD63E /* ViewController.m */,
+				FD23E9BD20230930007AD63E /* Main.storyboard */,
+				FD23E9C020230930007AD63E /* Assets.xcassets */,
+				FD23E9C220230930007AD63E /* LaunchScreen.storyboard */,
+				FD23E9C520230930007AD63E /* Info.plist */,
+				FD23E9C620230930007AD63E /* main.m */,
+				FDA34E75202310CA004E0ECD /* PlayViewController.h */,
+				FDA34E76202310CA004E0ECD /* PlayViewController.mm */,
+				FDA34E77202310CA004E0ECD /* PlayViewController.xib */,
+				FDA34E7A20231268004E0ECD /* PlayWindow.h */,
+				FDA34E7B20231268004E0ECD /* PlayWindow.m */,
+				FDA34E7C20231268004E0ECD /* PlayWindow.xib */,
+			);
+			path = iosPlayWnd;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FD23E9B320230930007AD63E /* iosPlayWnd */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD23E9E020230930007AD63E /* Build configuration list for PBXNativeTarget "iosPlayWnd" */;
+			buildPhases = (
+				FD23E9B020230930007AD63E /* Sources */,
+				FD23E9B120230930007AD63E /* Frameworks */,
+				FD23E9B220230930007AD63E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iosPlayWnd;
+			productName = iosPlayWnd;
+			productReference = FD23E9B420230930007AD63E /* iosPlayWnd.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FD23E9AC20230930007AD63E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = Raysharp;
+				TargetAttributes = {
+					FD23E9B320230930007AD63E = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = FD23E9AF20230930007AD63E /* Build configuration list for PBXProject "iosPlayWnd" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FD23E9AB20230930007AD63E;
+			productRefGroup = FD23E9B520230930007AD63E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FD23E9B320230930007AD63E /* iosPlayWnd */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FD23E9B220230930007AD63E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDA34E79202310CA004E0ECD /* PlayViewController.xib in Resources */,
+				FDA34E7E20231268004E0ECD /* PlayWindow.xib in Resources */,
+				FD23E9C420230930007AD63E /* LaunchScreen.storyboard in Resources */,
+				FD23E9C120230930007AD63E /* Assets.xcassets in Resources */,
+				FD23E9BF20230930007AD63E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FD23E9B020230930007AD63E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34C48F4B2192951C001DA699 /* SysInfHdd.mm in Sources */,
+				34C48EEE2192951B001DA699 /* VideoCover.mm in Sources */,
+				FDA34E78202310CA004E0ECD /* PlayViewController.mm in Sources */,
+				34C48EE22192951B001DA699 /* SysMaintain.mm in Sources */,
+				34C48F3B2192951C001DA699 /* VideoOutput.mm in Sources */,
+				34C48F5C2192951C001DA699 /* VideoSet.mm in Sources */,
+				34C48F5B2192951C001DA699 /* PerimeterZone.mm in Sources */,
+				34C48F272192951C001DA699 /* IOAlarmManage.mm in Sources */,
+				34C48EF12192951B001DA699 /* IntelligentNewUser.mm in Sources */,
+				34C48F622192951C001DA699 /* SysParamSerial.mm in Sources */,
+				34C48F3C2192951C001DA699 /* EncodeStream.mm in Sources */,
+				34C48F6F2192951C001DA699 /* GoodsLostLegacy.mm in Sources */,
+				34C48F232192951C001DA699 /* ParamBase.mm in Sources */,
+				34C48EE62192951B001DA699 /* IPCSet.mm in Sources */,
+				34C48ECA2192951B001DA699 /* RSSDKWrapper.mm in Sources */,
+				34C48F802192951C001DA699 /* UserAF.mm in Sources */,
+				34C48ED22192951B001DA699 /* Defaultparam.mm in Sources */,
+				34C48EF72192951B001DA699 /* NormalCloSto.mm in Sources */,
+				34C48F1C2192951C001DA699 /* RecInfo.mm in Sources */,
+				34C48F062192951C001DA699 /* PtzSchedule.mm in Sources */,
+				34C48F202192951C001DA699 /* Devlog.mm in Sources */,
+				34C48F252192951C001DA699 /* SSL.mm in Sources */,
+				34C48F6A2192951C001DA699 /* ChnInfo.mm in Sources */,
+				34C48EFD2192951B001DA699 /* PerimeterLine.mm in Sources */,
+				34C48F102192951C001DA699 /* AlarmPtz.mm in Sources */,
+				34C48F172192951C001DA699 /* SysParamDst.mm in Sources */,
+				34C48EC72192951B001DA699 /* jsoncpp.mm in Sources */,
+				34C48F412192951C001DA699 /* IntelligentPlan.mm in Sources */,
+				34C48F1B2192951C001DA699 /* FishEye.mm in Sources */,
+				34C48F4F2192951C001DA699 /* NetVPN.mm in Sources */,
+				34C48F822192951C001DA699 /* TypeMeterRecognition.mm in Sources */,
+				34C48F362192951C001DA699 /* RSPush.mm in Sources */,
+				34C48EE02192951B001DA699 /* AlarmIO.mm in Sources */,
+				34C48F382192951C001DA699 /* CaptureJh.mm in Sources */,
+				34C48F2E2192951C001DA699 /* FaceDetection.mm in Sources */,
+				34C48F8D2192951C001DA699 /* ParamRemoteTest.mm in Sources */,
+				34C48F262192951C001DA699 /* RedMantleDetection.mm in Sources */,
+				34C48F2A2192951C001DA699 /* GB28181.mm in Sources */,
+				34C48F602192951C001DA699 /* SysInfBase.mm in Sources */,
+				34C48F7F2192951C001DA699 /* RSPushSubscription.mm in Sources */,
+				34C48EDB2192951B001DA699 /* AlarmPIR.mm in Sources */,
+				34C48F4D2192951C001DA699 /* PlatformSet.mm in Sources */,
+				34C48F282192951C001DA699 /* RTSP.mm in Sources */,
+				FD23E9BC20230930007AD63E /* ViewController.m in Sources */,
+				34C48F542192951C001DA699 /* SwannCloSto.mm in Sources */,
+				34C48F192192951C001DA699 /* PeopleCrossCounting.mm in Sources */,
+				34C48F662192951C001DA699 /* EPlatform.mm in Sources */,
+				34C48F862192951C001DA699 /* RSDevice.mm in Sources */,
+				34C48F122192951C001DA699 /* GetSetParam.mm in Sources */,
+				34C48F022192951B001DA699 /* AutoUpgrade.mm in Sources */,
+				34C48EEF2192951B001DA699 /* AlarmPlan.mm in Sources */,
+				34C48F392192951C001DA699 /* SwitchSet.mm in Sources */,
+				FDA34E7D20231268004E0ECD /* PlayWindow.m in Sources */,
+				34C48EDD2192951B001DA699 /* SysParamPTZ.mm in Sources */,
+				FD23E9C720230930007AD63E /* main.m in Sources */,
+				34C48F402192951C001DA699 /* RecConfig.mm in Sources */,
+				34C48EFE2192951B001DA699 /* CaptureSet.mm in Sources */,
+				34C48F7D2192951C001DA699 /* IntrusionDetection.mm in Sources */,
+				34C48F092192951C001DA699 /* ZeroChannel.mm in Sources */,
+				34C48EFA2192951B001DA699 /* NewNetEmail.mm in Sources */,
+				34C48F2F2192951C001DA699 /* SystemID.mm in Sources */,
+				34C48F332192951C001DA699 /* IPFilterList.mm in Sources */,
+				34C48F682192951C001DA699 /* NetFilter.mm in Sources */,
+				34C48ED02192951B001DA699 /* VideoRoi.mm in Sources */,
+				34C48EE52192951B001DA699 /* AlarmNewIO.mm in Sources */,
+				34C48EE92192951B001DA699 /* IEEEX.mm in Sources */,
+				34C48F5F2192951C001DA699 /* JsonPage.mm in Sources */,
+				34C48EDC2192951B001DA699 /* LensShade.mm in Sources */,
+				34C48F672192951C001DA699 /* NetEmail.mm in Sources */,
+				34C48ECD2192951B001DA699 /* ImgCtrl.mm in Sources */,
+				34C48EE72192951B001DA699 /* AnalogCh.mm in Sources */,
+				34C48F652192951C001DA699 /* ALTEReport.mm in Sources */,
+				34B8535C222FABE700583486 /* base64.mm in Sources */,
+				FD23E9B920230930007AD63E /* AppDelegate.m in Sources */,
+				34C48F512192951C001DA699 /* NormalCloStoEm.mm in Sources */,
+				34C48F5A2192951C001DA699 /* ProManage.mm in Sources */,
+				34C48F762192951C001DA699 /* SwannWifi.mm in Sources */,
+				344C936A224C6888003E8F33 /* DropboxParam.mm in Sources */,
+				34C48F7C2192951C001DA699 /* EmailPlan.mm in Sources */,
+				34C48F342192951C001DA699 /* RecPlanIPC.mm in Sources */,
+				34C48F632192951C001DA699 /* RecPlanSmart.mm in Sources */,
+				34C48F242192951C001DA699 /* IPFilter.mm in Sources */,
+				34C48F452192951C001DA699 /* ChLive.mm in Sources */,
+				34C48F7B2192951C001DA699 /* SendCertificate.mm in Sources */,
+				34C48F312192951C001DA699 /* FtpPlan.mm in Sources */,
+				34C48EEA2192951B001DA699 /* FloodLight.mm in Sources */,
+				34C48F3D2192951C001DA699 /* LiveParam.mm in Sources */,
+				34C48F522192951C001DA699 /* ShowIntell.mm in Sources */,
+				34C48F1F2192951C001DA699 /* Alarmblock.mm in Sources */,
+				34C48F2D2192951C001DA699 /* NetBase.mm in Sources */,
+				34C48F162192951C001DA699 /* SXHTTPS.mm in Sources */,
+				34C48F032192951C001DA699 /* HumanDetection.mm in Sources */,
+				34C48F2B2192951C001DA699 /* Voicectrl.mm in Sources */,
+				34C48F352192951C001DA699 /* AlarmAbnormity.mm in Sources */,
+				34C48EE12192951B001DA699 /* XinQiaoFD.mm in Sources */,
+				34C48F792192951C001DA699 /* SysParamUSer.mm in Sources */,
+				34C48EFC2192951B001DA699 /* NetDNS.mm in Sources */,
+				34C48F0B2192951C001DA699 /* FTP.mm in Sources */,
+				34C48F112192951C001DA699 /* AlarmMotion.mm in Sources */,
+				34C48F0F2192951C001DA699 /* SoundAlarm.mm in Sources */,
+				34C48F3A2192951C001DA699 /* HttpSet.mm in Sources */,
+				34C48F4C2192951C001DA699 /* RecPlan.mm in Sources */,
+				34C48ECB2192951B001DA699 /* SNMP.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FD23E9BD20230930007AD63E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD23E9BE20230930007AD63E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FD23E9C220230930007AD63E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD23E9C320230930007AD63E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FD23E9DE20230930007AD63E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FD23E9DF20230930007AD63E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FD23E9E120230930007AD63E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AC376MY52H;
+				ENABLE_BITCODE = NO;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../SDKWrapper/Include\"";
+				INFOPLIST_FILE = iosPlayWnd/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/iosPlayWnd/lib",
+				);
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = rgvdscacfegaga.ffdaafewf;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FD23E9E220230930007AD63E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AC376MY52H;
+				ENABLE_BITCODE = NO;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../SDKWrapper/Include\"";
+				INFOPLIST_FILE = iosPlayWnd/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/iosPlayWnd/lib",
+				);
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = rgvdscacfegaga.ffdaafewf;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FD23E9AF20230930007AD63E /* Build configuration list for PBXProject "iosPlayWnd" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD23E9DE20230930007AD63E /* Debug */,
+				FD23E9DF20230930007AD63E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD23E9E020230930007AD63E /* Build configuration list for PBXNativeTarget "iosPlayWnd" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD23E9E120230930007AD63E /* Debug */,
+				FD23E9E220230930007AD63E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FD23E9AC20230930007AD63E /* Project object */;
+}
